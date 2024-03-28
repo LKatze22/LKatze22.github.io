@@ -1,0 +1,19 @@
+header a {
+    margin-right: 16px;
+}
+
+.python {
+    color:blue
+}
+.hptext {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.menühp {
+    color:#778899
+}
+
+.links {
+    color:blue
+}
