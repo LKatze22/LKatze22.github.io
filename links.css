@@ -10,12 +10,15 @@ header a {
     color:#778899;
     margin-right: 16px;
 }
+
 .text {
     margin-left: 16px;
 }
+
 .python {
     color:blue
 }
-.menühp {
-    color:blue
+
+.menuhp {
+    color:blue;
 }
