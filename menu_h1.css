@@ -2,13 +2,16 @@
        color: #000000;
        background: #333333;
        padding:10px;
-       width:220px;
+       width:240px;
        margin-left: 95px;
        text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
 }
+
 body {
       margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
 }
+
 header {
         background-color: white;
         height: 100px;
