@@ -24,10 +24,10 @@ header {
 }
 
 a:hover {
-    color: #000000;
+    transition: all 0.4s ease-in-out;
+    transform: scale(1.1);
+};
 
-transition: all 0.4s ease-in-out;
+a:link {
 
-transform: scale(1.1);
 }
-

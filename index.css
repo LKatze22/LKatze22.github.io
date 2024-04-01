@@ -3,17 +3,16 @@ header a {
 }
 
 .python {
-    color:blue
+    color:blue;
 }
 .hptext {
     display: flex;
     justify-content:center;
     align-items: center;
 }
-.menühp {
-    color:#778899
+.menuhp {
+    color: #778899;
 }
-
 .links {
-    color:blue
+    color:blue;
 }

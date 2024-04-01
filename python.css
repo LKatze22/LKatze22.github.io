@@ -1,19 +1,24 @@
 header a {
        margin-right: 16px;
-    }
-    .links {
-       color:blue;
-       margin-right: 16px;
-    }
-    .menühp {
-       color:blue
-    }
-     .python {
-       color:#778899
-    }
-    .text {
-       margin-left: 16px;
-    }
-    .gehaltsrechner2 {
-       margin-left: 16px;
-    }
+}
+.links {
+    color:blue;
+    margin-right: 16px;
+}
+.menühp {
+    color:blue
+}
+.python {
+    color:#778899
+}
+.text {
+    margin-left: 16px;
+}
+.gehaltsrechner3 {
+    margin-left: 16px;
+
+}
+ .zahlenraten {
+    margin-left: 16px;
+    width: 929px;
+}
