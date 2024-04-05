@@ -1,6 +1,4 @@
-header a {
-    margin-right: 16px;
-}
+
 
 .hptext {
     margin-right: 16px;
@@ -9,6 +7,9 @@ header a {
 .links {
     color:#778899;
     margin-right: 16px;
+}
+.tipps {
+    color:blue;
 }
 
 .text {

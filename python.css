@@ -1,15 +1,16 @@
-header a {
-       margin-right: 16px;
-}
+
 .links {
     color:blue;
     margin-right: 16px;
 }
-.menühp {
+.menuhp {
     color:blue
 }
 .python {
     color:#778899
+}
+.tipps {
+    color:blue;
 }
 .text {
     margin-left: 16px;
