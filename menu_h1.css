@@ -1,6 +1,7 @@
  header a {
     margin-right: 16px;
 }
+
  h1 {
        color: #000000;
        background: #333333;
@@ -31,6 +32,45 @@ a:hover {
     transform: scale(1.1);
 };
 
-a:link {
+.weißbutt{
+    margin-top: 25px;
+    margin-left: 100px;
+    text-align: center;
+    width: 100px;
+    height: 32px;
+    border-radius: 0%;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid;
+    border-color: #000000;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
 
+.weißbutt:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid;
+    border-color: #000000;
+}
+
+.schwarzbutt{
+    margin-top: 25px;
+    text-align: center;
+    width: 100px;
+    height: 32px;
+    border-radius: 0%;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid;
+    border-color: #000000;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.schwarzbutt:hover {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid;
+    border-color: #000000;
 }
