@@ -30,11 +30,11 @@ header {
 a:hover {
     transition: all 0.4s ease-in-out;
     transform: scale(1.1);
-};
-
+}
+.python{
+    margin-right: 16px;
+}
 .weißbutt{
-    margin-top: 25px;
-    margin-left: 100px;
     text-align: center;
     width: 100px;
     height: 32px;
@@ -45,9 +45,10 @@ a:hover {
     border-color: #000000;
     cursor: pointer;
     transition: ease-in-out 0.3s;
-}
 
 .weißbutt:hover {
+    transition: ease-in-out 0.3s;
+    transform: scale(1.1);
     background-color: #ffffff;
     color: #000000;
     border: 1px solid;
@@ -55,7 +56,8 @@ a:hover {
 }
 
 .schwarzbutt{
-    margin-top: 25px;
+    margin-left: 5px;
+    margin-bottom: 5px;
     text-align: center;
     width: 100px;
     height: 32px;
@@ -69,6 +71,8 @@ a:hover {
 }
 
 .schwarzbutt:hover {
+    transition: ease-in-out 0.3s;
+    transform: scale(1.1);
     background-color: #000000;
     color: #ffffff;
     border: 1px solid;
