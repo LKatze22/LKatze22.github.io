@@ -27,16 +27,46 @@
 <br>
     </div>
 <div>
-<img class="gehaltsrechner3" src="gehaltsrechner 3.png">
-<br>
-<br>
+<pre>
+    print("Wenn du die Zahlen eigegeben hast drücke Enter. Bitte gebe kein €-Zeichen ein. ")
+    stundenlohn = input("Bitte gebe deinen Stundenlohn ein: ")                   # variable
+    stunden_pro_tag = input("Bitte gebe deine Stunden pro Tag ein: ")            # variable
+    tag = int(stunden_pro_tag)*int(stundenlohn)                                  # variable
+    monat = tag*int(input("Bitte gebe deine Arbeitstage in einem Monat ein: "))  # variable
+    geld_im_jahr = monat*12                                                      # variable
+    print(f"Du verdienst {monat}€ im Monat. ")
+    print(f"Du verdienst {geld_im_jahr}€ im Monat. ")
+    print("Beliebige Taste zum Schließen drücken. ")
+</pre>
     </div>
+     <hr>
  <div class="text">
 Hier der Python-Code für ein Zahlenraten-Spiel:
 <br>
 <br>
  </div>
-<img class="zahlenraten" src="zahlenraten.png">
-
+     <div class="text" style="color:#000000;">
+     <pre>
+import random
+geheime_zahl = random.randint(1, 1000)
+for versuche in range(10):
+    zahl_geraten = False
+    vorschlag = -1
+    while not zahl_geraten:
+        try:
+            vorschlag = int(input("Gib eine Zahl ein: "))
+            zahl_geraten = True
+        except ValueError:
+            print("Das war kein Integer.")
+    if vorschlag == geheime_zahl:
+        print("Du hast die geheime Zahl erraten! Glückwunsch!")
+        break
+    elif vorschlag > geheime_zahl:
+        print("Es wird eine kleinere Zahl gesucht.")
+    else:
+        print("Es wird eine größere Zahl gesucht.")
+print(f"Gesucht war die Zahl {geheime_zahl}.")
+</pre>
+     </div>
 </body>
 </html>
