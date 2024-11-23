@@ -12,7 +12,7 @@
 </head>
  <body style="background-color:#ffffff;">
      <header>
-         <a class="menuhp" href="/">Zur Homepage</a>
+         <a class="menuhp" href="index.html">Zur Homepage</a>
          <a class="links" href="links.html">Links</a>
          <a class="tipps" href="tipps.html">Tipps</a>
          <p class="python">Meine Python Programme</p>
@@ -68,5 +68,263 @@ for versuche in range(10):
 print(f"Gesucht war die Zahl {geheime_zahl}.")
 </pre>
      </div>
+     <hr>
+     <div>
+         <p>Hier der Python-Code für ein Wecker:</p>
+          <pre>
+
+Python Alarm Clock
+import time
+import datetime
+import pygame
+
+
+def set_alarm(alarm_time):
+    print(f"Alarm set for {alarm_time}")
+    sound_file = "my_music.mp3"
+    is_running = True
+
+    while is_running:
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        print(current_time)
+
+        if current_time == alarm_time:
+            print("AUFWACHEN 😴")
+
+            pygame.mixer.init()
+            pygame.mixer.music.load(sound_file)
+            pygame.mixer.music.play()
+
+            while pygame.mixer.music.get_busy():
+                time.sleep(1)
+
+            is_running = False
+
+        time.sleep(1)
+
+
+if _name_ == "__main__":
+    alarm_time = input("Schreib die Alarm Zeit (HH:MM:SS): ")
+    set_alarm(alarm_time)
+              </pre>
+     </div>
+     <hr>
+ <div>
+     Python PyQt5 Digital Clock
+     <pre>
+      import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
+from PyQt5.QtCore import QTimer, QTime, Qt
+from PyQt5.QtGui import QFont, QFontDatabase
+
+class DigitalClock(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.time_label = QLabel(self)
+        self.timer = QTimer(self)
+        self.initUI()
+
+    def initUI(self):
+        self.setWindowTitle("Digital Clock")
+        self.setGeometry(600, 400, 300, 100)
+
+        vbox = QVBoxLayout()
+        vbox.addWidget(self.time_label)
+        self.setLayout(vbox)
+
+        self.time_label.setAlignment(Qt.AlignCenter)
+
+        self.time_label.setStyleSheet("font-size: 150px;"
+                                                             "color: hsl(111, 100%, 50%);")
+        self.setStyleSheet("background-color: black;")
+
+        Use a custom font
+        font_id = QFontDatabase.addApplicationFont("DS-DIGIT.TTF")
+        font_family = QFontDatabase.applicationFontFamilies(font_id)[0]
+        my_font = QFont(font_family, 300)
+        self.time_label.setFont(my_font)
+
+        self.timer.timeout.connect(self.update_time)
+        self.timer.start(1000)
+
+        self.update_time()
+
+    def update_time(self):
+        current_time = QTime.currentTime().toString("hh:mm:ss AP")
+        self.time_label.setText(current_time)
+
+if _name_ == "__main__":
+    app = QApplication(sys.argv)
+    clock = DigitalClock()
+    clock.show()
+    sys.exit(app.exec_())
+     </pre>
+
+ </div>
+     <hr>
+ <div>
+     <p>Python Slotmaschine</p>
+     <pre>
+
+import random
+
+
+
+def spin_row():
+
+    symbols = ['🍒', '🍉', '🍋', '🔔', '⭐']
+
+
+
+    return [random.choice(symbols) for _ in range(3)]
+
+
+
+def print_row(row):
+
+    print("**************")
+
+    print(" | ".join(row))
+
+    print("**************")
+
+
+
+def get_payout(row, bet):
+
+    if row[0] == row[1] == row[2]:
+
+        if row[0] == '🍒':
+
+            return bet * 3
+
+        elif row[0] == '🍉':
+
+            return bet * 4
+
+        elif row[0] == '🍋':
+
+            return bet * 5
+
+        elif row[0] == '🔔':
+
+            return bet * 10
+
+        elif row[0] == '⭐':
+
+            return bet * 20
+
+    return 0
+
+
+
+def main():
+
+    balance = 100
+
+
+
+    print("*************************")
+
+    print("Willkomen zu Pyton Slots ")
+
+    print("Symbols: 🍒 🍉 🍋 🔔 ⭐")
+
+    print("*************************")
+
+
+
+    while balance > 0:
+
+        print(f"Aktueller Kontostand:  €{balance}")
+
+
+
+        bet = input("Platzieren Sie Ihren Einsatzbetrag: ")
+
+
+
+        if not bet.isdigit():
+
+            print("Gib eine Nummer ein")
+
+            continue
+
+
+
+        bet = int(bet)
+
+
+
+        if bet > balance:
+
+            print("Unzureichende Mittel")
+
+            continue
+
+
+
+        if bet <= 0:
+
+            print("Der Einsatz muss größer als 0 sein")
+
+            continue
+
+
+
+        balance -= bet
+
+
+
+        row = spin_row()
+
+        print("Spinning...\n")
+
+        print_row(row)
+
+
+
+        payout = get_payout(row, bet)
+
+
+
+        if payout > 0:
+
+            print(f"Du gewinnst  €{payout}")
+
+        else:
+
+            print("Entschuldigung du hast verloren")
+
+
+
+        balance += payout
+
+
+
+        play_again = input("Willst du noch mal drehen? (Y/N): ").upper()
+
+
+
+        if play_again != 'Y':
+
+            break
+
+
+
+    print("*******************************************")
+
+    print(f"Game over! Deine Finale bilanz ist{balance}")
+
+    print("*******************************************")
+
+
+
+if __name__ == '__main__':
+
+    main()
+     </pre>
+ </div>
+
 </body>
 </html>
