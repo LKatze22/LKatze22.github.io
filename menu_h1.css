@@ -11,6 +11,8 @@ a {
        width:240px;
       text-shadow: 2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c;
        font-family:"Gowun Dodum", sans-serif;
+
+
 }
 
 body {
@@ -38,3 +40,4 @@ a:hover {
 .python{
     margin-right: 16px;
 }
+
