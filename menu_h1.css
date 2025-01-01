@@ -18,6 +18,8 @@ a {
 body {
       margin: 0;
       font-family:"Gowun Dodum", sans-serif;
+      transform: translateY(30px);
+      animation: slideUp 1.5s ease-out forwards;
 
 
 }
@@ -29,7 +31,10 @@ header {
         justify-content:flex-end;
         align-items: center;
         box-shadow: 6px 4px 15px 4px rgba(0,0,0,0.85);
-       font-family:"Gowun Dodum", sans-serif;
+        font-family:"Gowun Dodum", sans-serif;
+        animation: header_move 2s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
 }
 
 a:hover {
@@ -39,5 +44,25 @@ a:hover {
 }
 .python{
     margin-right: 16px;
+}
+
+@keyframes header_move {
+
+from {
+opacity: 0;
+scale: 0.5;
+}
+
+to {
+}
+
+}
+
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
