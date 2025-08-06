@@ -1,42 +1,50 @@
 <!doctype html>
 <html lang="de" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="revisit-after" content="200 days">
-    <meta name="keywords" content="Programmieren, Programmier,HTMl, nützliche, Internetseiten, Seiten, Tipps ">
-    <link rel="stylesheet" href="menu_h1.css">
-    <link rel="stylesheet" href="index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="x-icon" href="icon.png">
-    <script src="script.js"></script>
-    <title>Programmieren</title>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="revisit-after" content="200 days">
+  <meta name="keywords" content="Programmieren, Programmier,HTMl, nützliche, Internetseiten, Seiten, Tipps ">
+  <link rel="stylesheet" href="menu_h1.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="x-icon" href="icon.png">
+  <script src="script.js"></script>
+  <title>Programmieren</title>
 </head>
 
- <body class="hintergrund">
-   <header>
-       <p class="menuhp"><img src="home2.svg">Homepage</p>
-       <a class="links" href="links.html"><img src="link.svg">Links</a>
-       <a class="tipps" href="tipps.html"><img src="glühbirne.svg">Tipps</a>
-       <a class="python" href="python.html"><img width="24" height="24" src="https://img.icons8.com/ios-filled/50/python.png" alt="python"/>Meine Python Programme</a>
-   </header>
-
-   <h1>Programmieren</h1>
-
-   <div class="hptext" style="color:#000000;">
-     <br>
-     <br>
-     Hallo.
-     <br>
-     Auf dieser Website geht es um Programmieren (z. B. um Python).
-     <br>
-     Du wirst hier coole Projekte,Tipps und Links zu anderen
-     nützlichen Webseiten zum diesem Thema finden.
-   </div>
+<body class="hintergrund">
+  <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+    <img src="menu.svg" alt="menu">
+  </button>
+  <nav id="navbar">
+    <ul>
+      <li><button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar"><img src="close.svg" alt="close"></button></li>
+      <li class="home-li"><a class="active-link" aria-current="page" href="index.html"><img src="home2.svg">Homepage</a></li>
+      <li></li>
+      <li><a class="links" href="links.html"><img src="link.svg">Links</a></li>
+      <li><a class="tipps" href="tipps.html"><img src="glühbirne.svg">Tipps</a></li>
+      <li><a class="python" href="python.html"><img width="24" height="24"
+            src="https://img.icons8.com/ios-filled/50/python.png" alt="python" />Meine Python Programme</a></li>
+    </ul>
+  </nav>
+  <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+  <h1>Programmieren</h1>
+  <div class="hptext" style="color:#000000;">
+    <br>
+    <br>
+    Hallo.
+    <br>
+    Auf dieser Website geht es um Programmieren (z. B. um Python).
+    <br>
+    Du wirst hier coole Projekte,Tipps und Links zu anderen
+    nützlichen Webseiten zum diesem Thema finden.
+  </div> 
 </body>
+
 </html>
-
-

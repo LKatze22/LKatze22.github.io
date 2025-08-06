@@ -1,7 +1,4 @@
- header a {
-    margin-right: 16px;
-    font-family:"Gowun Dodum", sans-serif;
-}
+
 a {
      text-decoration:none;
      font-family:"Gowun Dodum", sans-serif;
@@ -24,18 +21,7 @@ body {
 
 }
 
-header {
-        background-color: white;
-        height: 100px;
-        display: flex;
-        justify-content:flex-end;
-        align-items: center;
-        box-shadow: 6px 4px 15px 4px rgba(0,0,0,0.85);
-        font-family:"Gowun Dodum", sans-serif;
-        animation: header_move 2s;
-        animation-timing-function: ease-in-out;
-        animation-fill-mode: forwards;
-}
+
 
 a:hover {
     transition: all 0.4s ease-in-out;
