@@ -11,15 +11,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
      <link rel="shortcut icon" type="x-icon" href="icon.png">
+     <script src="script.js"></script>
     <title>Tipps</title>
 </head>
-<body>
-<header>
-       <a class="menuhp" href="index.html"><img src="home2.svg">Zur Homepage</a>
-       <a class="links" href="links.html"><img src="link.svg">Links</a>
-       <p class="tipps"><img src="glühbirne.svg">Tipps</p>
-       <a class="python" href="python.html"><img width="24" height="24" src="https://img.icons8.com/ios-filled/50/python.png" alt="python"/>Meine Python Programme</a>
-   </header>
+<body class="hintergrund">
+  <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false" aria-controls="navbar">
+    <img src="menu.svg" alt="menu">
+  </button>
+  <nav id="navbar">
+    <ul>
+      <li><button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar"><img src="close.svg" alt="close"></button></li>
+      <li class="home-li"><a href="index.html"><img src="home2.svg">Homepage</a></li>
+      <li></li>
+      <li><a class="links" href="links.html"><img src="link.svg">Links</a></li>
+      <li><a class="active-link" aria-current="page"  href="tipps.html"><img src="glühbirne.svg">Tipps</a></li>
+      <li><a class="python" href="python.html"><img width="24" height="24"
+            src="https://img.icons8.com/ios-filled/50/python.png" alt="python" />Meine Python Programme</a></li>
+    </ul>
+  </nav>
+  <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
 <h1>Tipps</h1>
 <h2>Python:</h2>
 <p class="textpytipp">Füge unten am Programmende immer eine leere Zeile hizu
