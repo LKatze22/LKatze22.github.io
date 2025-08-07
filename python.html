@@ -37,14 +37,18 @@
     <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
 
     <h1>Meine Python Programme</h1>
-    <div class="text" style="color:#000000;">
-        (Die Vervollständigung folgt...)
-        <br>
+
+    <span class="introduction">
+        Hier findest du einige meiner Python Programme, die du ausprobieren kannst.
+    </span>
+    <br>
+    <span class="textpygames">
         Hier siehst du einen Python-Code für einen Gehaltsrechner:
-        <br>
-        <br>
-    </div>
-    <div class="text">
+    </span>
+    <br>
+    <br>
+
+    <div class="code">
         <pre>
     print("Wenn du die Zahlen eigegeben hast drücke Enter. Bitte gebe kein €-Zeichen ein. ")
     stundenlohn = input("Bitte gebe deinen Stundenlohn ein: ")                   # variable
@@ -58,12 +62,12 @@
 </pre>
     </div>
     <hr>
-    <div class="text">
+    <span class="textpygames">
         Hier der Python-Code für ein Zahlenraten-Spiel:
-        <br>
-        <br>
-    </div>
-    <div class="text" style="color:#000000;">
+    </span>
+    <br>
+    <br>
+    <div class="code">
         <pre>
 import random
 geheime_zahl = random.randint(1, 1000)
@@ -87,11 +91,12 @@ print(f"Gesucht war die Zahl {geheime_zahl}.")
 </pre>
     </div>
     <hr>
-    <div class="text">
-        <p>Hier der Python-Code für ein Wecker:</p>
+    <span class="textpygames">
+        Hier der Python-Code für ein Wecker:
+    </span>
+    <div class="code">
         <pre>
 
-Python Alarm Clock
 import time
 import datetime
 import pygame
@@ -125,10 +130,12 @@ if _name_ == "__main__":
     alarm_time = input("Schreib die Alarm Zeit (HH:MM:SS): ")
     set_alarm(alarm_time)
               </pre>
+              <hr>
+   <span class="textpygames">
+        Hier der Code für eine digitale Uhr</span>
     </div>
-    <hr>
-    <div class="text">
-        Python PyQt5 Digital Clock
+        <div class="code">
+        
         <pre>
       import sys
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout
@@ -180,8 +187,10 @@ if _name_ == "__main__":
 
     </div>
     <hr>
-    <div class="text">
-        <p>Python Slotmaschine</p>
+    <span class="textpygames">
+        Python Slotmaschine
+    </span>
+        <div class="code">
         <pre>
 
 import random
@@ -342,6 +351,7 @@ if __name__ == '__main__':
 
     main()
      </pre>
+     </div>
     </div>
 
 </body>

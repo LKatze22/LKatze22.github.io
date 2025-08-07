@@ -1,6 +1,9 @@
 .hptext {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+    margin-right: 16px;
+    margin-left: 16px;
+    font-family: "Gowun Dodum", sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
 }
 

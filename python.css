@@ -1,5 +1,24 @@
-
-
 body {
-width: 100%;
+  width: 100%;
+}
+
+.code {
+  
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin: 16px;
+}
+
+.introduction {
+ font-size: 1.4em;
+  line-height: 1.5;
+  margin: 16px;
+  font-weight: bold;
+}
+
+.textpygames{
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin: 16px;
+  color: hsl(0, 0%, 60%);
 }
