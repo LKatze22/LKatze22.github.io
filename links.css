@@ -2,7 +2,11 @@ h1 {
 font-family:"Gowun Dodum", sans-serif;
 }
 
-.hptext {
-    margin-right: 16px;
+.text h2 {
+margin-left: 16px;
 }
+.text a {
+    margin-left: 16px;
+}
+
 

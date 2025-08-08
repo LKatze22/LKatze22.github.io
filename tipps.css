@@ -3,6 +3,7 @@
 h2 {
     text-align: center;
 }
-.texthtmltipp {
-text-align: center;
+.texthtmltipp, .textpytipp {
+    text-align: center;
 }
+
