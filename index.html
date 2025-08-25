@@ -1,56 +1,827 @@
-<!doctype html>
-<html lang="de" data-color-mode="auto" data-light-theme="light" data-dark-theme="dark">
-
+<!DOCTYPE html>
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="revisit-after" content="200 days">
-  <meta name="keywords" content="Programmieren, Programmier,HTMl, nützliche, Internetseiten, Seiten, Tipps ">
-  <link rel="stylesheet" href="menu_h1.css">
-  <link rel="stylesheet" href="index.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" type="x-icon" href="icon.png">
-  <script src="script.js"></script>
-  <title>Programmieren</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - LKatze22</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+      color: #ffffff;
+      line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /* Header */
+    .header {
+      background: rgba(30, 30, 30, 0.95);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      transition: all 0.3s ease;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 600;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: pulse 2s infinite;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #ccc;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 5px 0;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #667eea;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 80px 0 60px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .profile-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      animation: float 3s ease-in-out infinite;
+      transition: all 0.3s ease;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+    }
+
+    .hero h1 {
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 8px;
+      color: #ffffff;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .hero .name {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 500;
+    }
+
+    .hero .subtitle {
+      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 40px;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    /* Main Content */
+    .main-content {
+      padding: 40px 0;
+    }
+
+    /* Section Animation */
+    .section {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* About Section */
+    .about-section {
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 16px;
+      padding: 40px;
+      margin-bottom: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      transition: all 0.3s ease;
+    }
+
+    .about-section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border-color: rgba(102, 126, 234, 0.3);
+    }
+
+    .about-image {
+      width: 120px;
+      height: 120px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .about-image:hover {
+      transform: rotate(5deg) scale(1.05);
+    }
+
+    .about-content h2 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+    }
+
+    .about-text {
+      color: #ddd;
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      transition: color 0.3s ease;
+    }
+
+    .about-text:hover {
+      color: #fff;
+    }
+
+    /* Work Section */
+    .work-section {
+      margin-bottom: 40px;
+    }
+
+    .work-section h2 {
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 30px;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .work-item {
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      transform: translateY(0);
+    }
+
+    .work-item:hover {
+      transform: translateY(-10px) scale(1.02);
+      border-color: rgba(102, 126, 234, 0.5);
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    }
+
+    .work-image {
+      width: 100%;
+      height: 200px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .work-image::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .work-item:hover .work-image::before {
+      left: 100%;
+    }
+
+    .work-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .work-item:hover .work-image img {
+      transform: scale(1.1);
+    }
+
+    .work-image svg {
+      transition: transform 0.4s ease;
+    }
+
+    .work-item:hover .work-image svg {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .work-content {
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .work-item:hover .work-content {
+      background: rgba(40, 40, 40, 0.5);
+    }
+
+    .work-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+      transition: color 0.3s ease;
+    }
+
+    .work-item:hover .work-title {
+      color: #667eea;
+    }
+
+    .work-description {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.5;
+      transition: color 0.3s ease;
+    }
+
+    .work-item:hover .work-description {
+      color: #ccc;
+    }
+
+    /* Links Section */
+    .links-section {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: inline-block;
+      padding: 12px 24px;
+      background: rgba(30, 30, 30, 0.8);
+      border-radius: 8px;
+      text-decoration: none;
+      color: #ddd;
+      font-size: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      transition: left 0.4s ease;
+      z-index: -1;
+    }
+
+    .social-link:hover::before {
+      left: 0;
+    }
+
+    .social-link:hover {
+      color: white;
+      border-color: rgba(102, 126, 234, 0.8);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+      transform: translateY(-5px) scale(1.05);
+    }
+
+    /* Footer */
+    .footer {
+      background: rgba(20, 20, 20, 0.9);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #aaa;
+      text-align: center;
+      padding: 30px 0;
+      margin-top: 60px;
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .footer p {
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .footer:hover p {
+      color: #667eea;
+    }
+
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      z-index: 101;
+      transition: width 0.1s ease;
+    }
+
+    /* Loading Animation */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0f0f0f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader-text {
+      font-size: 24px;
+      color: #667eea;
+      animation: pulse 1.5s infinite;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+      }
+
+      .about-image {
+        align-self: center;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        gap: 20px;
+      }
+
+      .social-links {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 60px 0 40px;
+      }
+
+      .container {
+        padding: 0 15px;
+      }
+
+      .hero h1 {
+        font-size: 20px;
+      }
+
+      .profile-image {
+        width: 70px;
+        height: 70px;
+        font-size: 25px;
+      }
+    }
+  </style>
 </head>
 
-<body class="hintergrund">
-  <button id="open-sidebar-button" onclick="openSidebar()" aria-label="open sidebar" aria-expanded="false"
-    aria-controls="navbar">
-    <img src="menu.svg" alt="menu">
-  </button>
-  <nav id="navbar">
-    <ul>
-      <li><button id="close-sidebar-button" onclick="closeSidebar()" aria-label="close sidebar"><img src="close.svg"
-            alt="close"></button></li>
-      <li class="home-li"><a class="active-link" aria-current="page" href="index.html"><img src="home2.svg" alt="homepage">Homepage</a>
-      </li>
-      <li></li>
-      <li><a class="links" href="links.html"><img src="link.svg" alt="links">Links</a></li>
-      <li><a class="tipps" href="tipps.html"><img src="glühbirne.svg" alt="tipps">Tipps</a></li>
-      <li><a class="python" href="python.html"><img width="24" height="24"
-            src="https://img.icons8.com/ios-filled/50/python.png" alt="python" />Meine Python Programme</a></li>
-    </ul>
-  </nav>
-  <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
-  <h1>Programmieren</h1>
-  <div class="hptext" style="color:#000000;">
-    <br>
-    <br>
-    Hallo.
-    <br>
-    Auf dieser Website geht es um Programmieren (z. B. um Python).
-    <br><br>
-
-    <img src="glühbirne.svg">Tipps zum Programmieren<br>
-    <img src="link.svg">Links zu nützlichen Webseiten<br>
-    <img width="24" height="24" src="https://img.icons8.com/ios-filled/50/python.png" alt="python">Coole Python Programme, die du ausprobieren solltest<br>
-
+<body>
+  <!-- Loading Screen -->
+  <div class="loader" id="loader">
+    <div class="loader-text">Loading...</div>
   </div>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <nav class="nav">
+        <div class="logo">Portfolio</div>
+        <ul class="nav-links">
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#work" class="nav-link">Work</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section id="home" class="hero section">
+      <div class="profile-image">🐱</div>
+      <h1>Hi,<br>Ich bin <span class="name">LKatze22</span></h1>
+      <p class="subtitle">Ich lerne gerade Web Development</p>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- About Section -->
+      <section id="about" class="about-section section">
+        <div class="about-image">🐱</div>
+        <div class="about-content">
+          <h2>ÜBER MICH</h2>
+          <p class="about-text">
+            Hallo! Ich bin ein leidenschaftlicher Web Developer in meiner Freizeit und arbeite täglich daran, 
+            meine Fähigkeiten in HTML, CSS und JavaScript zu verbessern. Meine Reise begann vor einigen 
+            Monaten und seitdem habe ich bereits mehrere spannende Projekte umgesetzt.
+          </p>
+          <p class="about-text">
+            Ich liebe es, kreative Lösungen für technische Herausforderungen zu finden und dabei 
+            moderne, benutzerfreundliche Websites zu entwickeln. Mein Fokus liegt auf funktionalen 
+            Webseiten, die einem weiterhelfen.
+          </p>
+          <p class="about-text">
+            Wenn ich nicht gerade programmiere, verbringe ich meine Zeit gerne mit Gaming, 
+            dem Lernen neuer Technologien oder dem Erkunden aktueller Tech-Trends. 
+            Ich freue mich darauf, meine Kenntnisse kontinuierlich zu erweitern!
+          </p>
+        </div>
+      </section>
+
+      <!-- Work Section -->
+      <section id="work" class="work-section section">
+        <h2>Projekte</h2>
+        <div class="work-grid">
+          <div class="work-item">
+            <div class="work-image">
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="10" y="20" width="50" height="50" rx="10" fill="#282828" stroke="#f7b32b" stroke-width="4" />
+                <polyline points="22,50 35,63 55,35" fill="none" stroke="#27FDC7" stroke-width="5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <text x="10" y="18" font-size="18" fill="#f7b32b" font-family="Arial, sans-serif">To-Do</text>
+              </svg>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">To-Do List App</h3>
+              <p class="work-description">
+                Eine interaktive To-Do Liste mit lokaler Speicherung, gebaut mit HTML, CSS und JavaScript. 
+                Features: Aufgaben hinzufügen, bearbeiten, löschen und als erledigt markieren.
+              </p>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-image">
+              <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+               <code>&lt;/&gt;</code>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Programmier-Lernwebsite</h3>
+              <p class="work-description">
+                Eine responsive Website zum Erlernen von Programmiersprachen mit interaktiven 
+                Code-Beispielen und Übungen. Implementiert mit mehreren Code-Beispielen.
+              </p>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-image">
+              <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+                🍫
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Produktseite Design</h3>
+              <p class="work-description">
+                Eine moderne Produktpräsentationsseite mit animierten Elementen und 
+                responsivem Design. Fokus auf visuelle Ästhetik und Benutzerfreundlichkeit.
+              </p>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-image">
+              <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+                🎮
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Discord Server Webseite</h3>
+              <p class="work-description">
+                Entwicklung einer Website inklusive Logo-Design, 
+                Farbschema und Typografie für ein Discord Server.
+              </p>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-image">
+              <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+                📝
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Quick-Notes</h3>
+              <p class="work-description">
+                Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen. 
+                Entwickelt mit HTML, CSS und JavaScript für eine nahtlose Benutzererfahrung.
+              </p>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-image">
+              <div style="background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+                ❓
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Das nächste Projekt</h3>
+              <p class="work-description">
+                Das nächste Projekt folgt bald...
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Links Section -->
+      <section id="contact" class="links-section section">
+        <div class="social-links">
+          <a href="https://lucent-bienenstitch-d43dbb.netlify.app/" class="social-link" target="_blank">bald: To-do Listen App</a>
+          <a href="https://lkatze22.github.io/index.html" class="social-link" target="_blank">Programmier-Lernwebsite</a>
+          <a href="https://hatiloyt.github.io/YNYB-homepage/" class="social-link" target="_blank">Discord Server Website</a>
+          <a href="https://lessonpulse.ct.ws/" class="social-link" target="_blank">LessonPulse (von einem Freund)</a>
+          <a href="https://hatiloyt.github.io/Hansi-Profil/" class="social-link" target="_blank">Hansi</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 LKatze22. Alle Rechte vorbehalten.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Loading Screen
+    window.addEventListener('load', function() {
+      const loader = document.getElementById('loader');
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 1000);
+    });
+
+    // Smooth scrolling navigation
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Remove active class from all links
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        // Add active class to clicked link
+        this.classList.add('active');
+        
+        // Get target section
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+          const headerHeight = document.querySelector('.header').offsetHeight;
+          const targetPosition = targetSection.offsetTop - headerHeight - 20;
+          
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Scroll progress bar
+    window.addEventListener('scroll', function() {
+      const scrollProgress = document.getElementById('scrollProgress');
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      scrollProgress.style.width = scrollPercent + '%';
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Update active navigation based on scroll position
+    window.addEventListener('scroll', function() {
+      const sections = document.querySelectorAll('.section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const headerHeight = document.querySelector('.header').offsetHeight;
+      
+      let current = '';
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - headerHeight - 100;
+        const sectionHeight = section.offsetHeight;
+        
+        if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Add some Easter egg interactions
+    let clickCount = 0;
+    document.querySelectorAll('.profile-image, .about-image').forEach(image => {
+      image.addEventListener('click', function() {
+        clickCount++;
+        this.style.transform = `scale(1.2) rotate(${clickCount * 45}deg)`;
+        
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 300);
+        
+        if (clickCount >= 5) {
+          document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)';
+          setTimeout(() => {
+            document.body.style.background = 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%)';
+            clickCount = 0;
+          }, 2000);
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
