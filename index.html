@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio - LKatze22</title>
+  <link rel="icon" type="x-icon" href="x-icon.png">
   <style>
     * {
       margin: 0;
@@ -36,6 +38,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -46,24 +49,31 @@
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
     }
 
     @keyframes pulse {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: scale(1);
       }
+
       50% {
         transform: scale(1.05);
       }
     }
 
     @keyframes float {
-      0%, 100% {
+
+      0%,
+      100% {
         transform: translateY(0px);
       }
+
       50% {
         transform: translateY(-10px);
       }
@@ -156,7 +166,12 @@
       animation: float 3s ease-in-out infinite;
       transition: all 0.3s ease;
     }
-
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
     .profile-image:hover {
       transform: scale(1.1) translateY(-5px);
       box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
@@ -234,6 +249,12 @@
       font-size: 50px;
       box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
       transition: all 0.3s ease;
+    }
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+      object-fit: cover;
     }
 
     .about-image:hover {
@@ -551,7 +572,11 @@
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <div class="logo">Portfolio</div>
+        <div class="logo">
+
+
+          <img height="60" width="60" src="portfolio_icon.png" alt="portfolio icon">
+        </div>
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
@@ -565,7 +590,7 @@
   <div class="container">
     <!-- Hero Section -->
     <section id="home" class="hero section">
-      <div class="profile-image">🐱</div>
+      <div class="profile-image"><img src="profile_img.png" alt="profile-image"></div>
       <h1>Hi,<br>Ich bin <span class="name">LKatze22</span></h1>
       <p class="subtitle">Ich lerne gerade Web Development</p>
     </section>
@@ -574,26 +599,27 @@
     <main class="main-content">
       <!-- About Section -->
       <section id="about" class="about-section section">
-        <div class="about-image">🐱</div>
+        <div class="about-image"><img src="profile_img.png" alt="profile-image"></div>
         <div class="about-content">
           <h2>ÜBER MICH</h2>
           <p class="about-text">
-            Hallo! Ich bin ein leidenschaftlicher Web Developer in meiner Freizeit und arbeite täglich daran, 
-            meine Fähigkeiten in HTML, CSS und JavaScript zu verbessern. Meine Reise begann vor einigen 
+            Hallo! Ich bin ein leidenschaftlicher Web Developer in meiner Freizeit und arbeite täglich daran,
+            meine Fähigkeiten in HTML, CSS und JavaScript zu verbessern. Meine Reise begann vor einigen
             Monaten und seitdem habe ich bereits mehrere spannende Projekte umgesetzt.
           </p>
           <p class="about-text">
-            Ich liebe es, kreative Lösungen für technische Herausforderungen zu finden und dabei 
-            moderne, benutzerfreundliche Websites zu entwickeln. Mein Fokus liegt auf funktionalen 
+            Ich liebe es, kreative Lösungen für technische Herausforderungen zu finden und dabei
+            moderne, benutzerfreundliche Websites zu entwickeln. Mein Fokus liegt auf funktionalen
             Webseiten, die einem weiterhelfen.
           </p>
           <p class="about-text">
-            Wenn ich nicht gerade programmiere, verbringe ich meine Zeit gerne mit Gaming, 
-            dem Lernen neuer Technologien oder dem Erkunden aktueller Tech-Trends. 
+            Wenn ich nicht gerade programmiere, verbringe ich meine Zeit gerne mit Gaming,
+            dem Lernen neuer Technologien oder dem Erkunden aktueller Tech-Trends.
             Ich freue mich darauf, meine Kenntnisse kontinuierlich zu erweitern!
           </p>
         </div>
       </section>
+ 
 
       <!-- Work Section -->
       <section id="work" class="work-section section">
@@ -601,32 +627,41 @@
         <div class="work-grid">
           <div class="work-item">
             <div class="work-image">
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="10" y="20" width="50" height="50" rx="10" fill="#282828" stroke="#f7b32b" stroke-width="4" />
-                <polyline points="22,50 35,63 55,35" fill="none" stroke="#27FDC7" stroke-width="5"
-                  stroke-linecap="round" stroke-linejoin="round" />
-                <text x="10" y="18" font-size="18" fill="#f7b32b" font-family="Arial, sans-serif">To-Do</text>
+              <svg width="80" height="80" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <rect x="64" y="64" width="384" height="384" rx="32" fill="url(#grad)" />
+                <path d="M140 256l80 80 160-160" stroke="white" stroke-width="40" stroke-linecap="round"
+                  stroke-linejoin="round" fill="none" />
+                <rect x="200" y="180" width="200" height="24" rx="12" fill="white" fill-opacity="0.3" />
+                <rect x="200" y="260" width="160" height="24" rx="12" fill="white" fill-opacity="0.3" />
+                <rect x="200" y="340" width="120" height="24" rx="12" fill="white" fill-opacity="0.3" />
               </svg>
             </div>
             <div class="work-content">
               <h3 class="work-title">To-Do List App</h3>
               <p class="work-description">
-                Eine interaktive To-Do Liste mit lokaler Speicherung, gebaut mit HTML, CSS und JavaScript. 
-                Features: Aufgaben hinzufügen, bearbeiten, löschen und als erledigt markieren.
+                Eine interaktive To-Do Liste mit lokaler Speicherung, gebaut mit HTML, CSS und JavaScript.
+                Features: Aufgaben hinzufügen, bearbeiten, löschen und als erledigt markieren usw.
               </p>
             </div>
           </div>
 
           <div class="work-item">
             <div class="work-image">
-              <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
-               <code>&lt;/&gt;</code>
+              <div
+                style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+                <code>&lt;/&gt;</code>
               </div>
             </div>
             <div class="work-content">
               <h3 class="work-title">Programmier-Lernwebsite</h3>
               <p class="work-description">
-                Eine responsive Website zum Erlernen von Programmiersprachen mit interaktiven 
+                Eine responsive Website zum Erlernen von Programmiersprachen mit interaktiven
                 Code-Beispielen und Übungen. Implementiert mit mehreren Code-Beispielen.
               </p>
             </div>
@@ -634,14 +669,15 @@
 
           <div class="work-item">
             <div class="work-image">
-              <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+              <div
+                style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
                 🍫
               </div>
             </div>
             <div class="work-content">
               <h3 class="work-title">Produktseite Design</h3>
               <p class="work-description">
-                Eine moderne Produktpräsentationsseite mit animierten Elementen und 
+                Eine moderne Produktpräsentationsseite mit animierten Elementen und
                 responsivem Design. Fokus auf visuelle Ästhetik und Benutzerfreundlichkeit.
               </p>
             </div>
@@ -649,14 +685,15 @@
 
           <div class="work-item">
             <div class="work-image">
-              <div style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+              <div
+                style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
                 🎮
               </div>
             </div>
             <div class="work-content">
               <h3 class="work-title">Discord Server Webseite</h3>
               <p class="work-description">
-                Entwicklung einer Website inklusive Logo-Design, 
+                Entwicklung einer Website inklusive Logo-Design,
                 Farbschema und Typografie für ein Discord Server.
               </p>
             </div>
@@ -664,14 +701,15 @@
 
           <div class="work-item">
             <div class="work-image">
-              <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+              <div
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
                 📝
               </div>
             </div>
             <div class="work-content">
               <h3 class="work-title">Quick-Notes</h3>
               <p class="work-description">
-                Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen. 
+                Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen.
                 Entwickelt mit HTML, CSS und JavaScript für eine nahtlose Benutzererfahrung.
               </p>
             </div>
@@ -679,7 +717,8 @@
 
           <div class="work-item">
             <div class="work-image">
-              <div style="background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+              <div
+                style="background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
                 ❓
               </div>
             </div>
@@ -696,12 +735,9 @@
       <!-- Links Section -->
       <section id="contact" class="links-section section">
         <div class="social-links">
-          <a href="https://lucent-bienenstitch-d43dbb.netlify.app/" class="social-link" target="_blank">bald: To-do Listen App</a>
-          <a href="https://lkatze22.github.io/index.html" class="social-link" target="_blank">Programmier-Lernwebsite</a>
-          <a href="https://hatiloyt.github.io/YNYB-homepage/" class="social-link" target="_blank">Discord Server Website</a>
-          <a href="https://lessonpulse.ct.ws/" class="social-link" target="_blank">LessonPulse (von einem Freund)</a>
-          <a href="https://hatiloyt.github.io/Hansi-Profil/" class="social-link" target="_blank">Hansi</a>
-        </div>
+          
+          <a href="https://github.com/LKatze22" class="social-link" target="_blank">Github</a>
+          </div>
       </section>
     </main>
   </div>
@@ -715,7 +751,7 @@
 
   <script>
     // Loading Screen
-    window.addEventListener('load', function() {
+    window.addEventListener('load', function () {
       const loader = document.getElementById('loader');
       setTimeout(() => {
         loader.classList.add('hidden');
@@ -724,22 +760,22 @@
 
     // Smooth scrolling navigation
     document.querySelectorAll('.nav-link').forEach(link => {
-      link.addEventListener('click', function(e) {
+      link.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         // Remove active class from all links
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         // Add active class to clicked link
         this.classList.add('active');
-        
+
         // Get target section
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
-        
+
         if (targetSection) {
           const headerHeight = document.querySelector('.header').offsetHeight;
           const targetPosition = targetSection.offsetTop - headerHeight - 20;
-          
+
           window.scrollTo({
             top: targetPosition,
             behavior: 'smooth'
@@ -749,7 +785,7 @@
     });
 
     // Scroll progress bar
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const scrollProgress = document.getElementById('scrollProgress');
       const scrollTop = window.pageYOffset;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -763,7 +799,7 @@
       rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -777,22 +813,22 @@
     });
 
     // Update active navigation based on scroll position
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
       const sections = document.querySelectorAll('.section');
       const navLinks = document.querySelectorAll('.nav-link');
       const headerHeight = document.querySelector('.header').offsetHeight;
-      
+
       let current = '';
-      
+
       sections.forEach(section => {
         const sectionTop = section.offsetTop - headerHeight - 100;
         const sectionHeight = section.offsetHeight;
-        
+
         if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
           current = section.getAttribute('id');
         }
       });
-      
+
       navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) {
@@ -804,14 +840,14 @@
     // Add some Easter egg interactions
     let clickCount = 0;
     document.querySelectorAll('.profile-image, .about-image').forEach(image => {
-      image.addEventListener('click', function() {
+      image.addEventListener('click', function () {
         clickCount++;
         this.style.transform = `scale(1.2) rotate(${clickCount * 45}deg)`;
-        
+
         setTimeout(() => {
           this.style.transform = '';
         }, 300);
-        
+
         if (clickCount >= 5) {
           document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)';
           setTimeout(() => {
