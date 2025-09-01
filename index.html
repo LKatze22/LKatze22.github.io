@@ -27,7 +27,118 @@
       min-height: 100vh;
       overflow-x: hidden;
       padding-top: env(safe-area-inset-top);
-  padding-bottom: env(safe-area-inset-bottom);
+      padding-bottom: env(safe-area-inset-bottom);
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* Light Mode Styles */
+    @media (prefers-color-scheme: light) {
+      body {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        color: #212529;
+      }
+
+      .header {
+        background: rgba(255, 255, 255, 0.95);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links a {
+        color: #6c757d;
+      }
+
+      .nav-links a:hover,
+      .nav-links a.active {
+        color: #667eea;
+      }
+
+      .hero h1 {
+        color: #212529;
+      }
+
+      .hero .subtitle {
+        color: #6c757d;
+      }
+
+      .about-section {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .about-section:hover {
+        border-color: rgba(102, 126, 234, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-text {
+        color: #495057;
+      }
+
+      .about-text:hover {
+        color: #212529;
+      }
+
+      .work-item {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .work-item:hover {
+        border-color: rgba(102, 126, 234, 0.5);
+        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+      }
+
+      .work-title {
+        color: #212529;
+      }
+
+      .work-item:hover .work-title {
+        color: #667eea;
+      }
+
+      .work-description {
+        color: #6c757d;
+      }
+
+      .work-item:hover .work-description {
+        color: #495057;
+      }
+
+      .work-item:hover .work-content {
+        background: rgba(248, 249, 250, 0.5);
+      }
+
+      .social-link {
+        background: rgba(255, 255, 255, 0.9);
+        color: #6c757d;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .social-link:hover {
+        color: white;
+      }
+
+      .footer {
+        background: rgba(248, 249, 250, 0.95);
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        color: #6c757d;
+      }
+
+      .footer:hover p {
+        color: #667eea;
+      }
+
+      .loader {
+        background: #f8f9fa;
+      }
+
+      .loader-text {
+        color: #667eea;
+      }
+
+      .cursor {
+        background: #667eea;
+      }
     }
 
     .container {
@@ -83,6 +194,16 @@
       }
     }
 
+    /* Blinking cursor animation */
+    @keyframes blink {
+      0%, 50% {
+        opacity: 1;
+      }
+      51%, 100% {
+        opacity: 0;
+      }
+    }
+
     /* Header */
     .header {
       background: rgba(30, 30, 30, 0.95);
@@ -111,7 +232,10 @@
       background-clip: text;
       animation: pulse 2s infinite;
     }
-
+    .logo img {
+      border-radius: 12px;
+      
+    }
     .nav-links {
       display: flex;
       gap: 30px;
@@ -150,13 +274,16 @@
     }
 
     /* Hero Section */
-    .hero {
+    .hero section {
+      
       text-align: center;
       padding: 80px 0 60px;
       animation: fadeInUp 1s ease-out;
     }
 
+
     .profile-image {
+      margin-top: 5em;
       width: 80px;
       height: 80px;
       border-radius: 50%;
@@ -170,12 +297,14 @@
       animation: float 3s ease-in-out infinite;
       transition: all 0.3s ease;
     }
+
     .profile-image img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
     }
+
     .profile-image:hover {
       transform: scale(1.1) translateY(-5px);
       box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
@@ -254,6 +383,7 @@
       box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
       transition: all 0.3s ease;
     }
+
     .about-image img {
       width: 100%;
       height: 100%;
@@ -517,6 +647,39 @@
       animation: pulse 1.5s infinite;
     }
 
+    /* Typewriter Styles */
+    .typewriter-wrapper {
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 2em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin: 0 auto;
+      width: fit-content;
+    }
+
+    .typewriter {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.2em;
+      background: #667eea;
+      animation: blink 1s infinite;
+      margin-left: 2px;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
       .about-section {
@@ -554,11 +717,12 @@
         font-size: 20px;
       }
 
-      .profile-image {
-        width: 70px;
-        height: 70px;
-        font-size: 25px;
+      .typewriter-wrapper {
+        font-size: 1.5em;
       }
+    }
+    #home {
+      margin-top: 3rem;
     }
   </style>
 </head>
@@ -577,9 +741,7 @@
     <div class="container">
       <nav class="nav">
         <div class="logo">
-
-
-          <img height="60" width="60" src="portfolio_icon.png" alt="portfolio icon">
+          <img width="60" height="80" src="profile_img.png" alt="Profile Image">
         </div>
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
@@ -594,16 +756,23 @@
   <div class="container">
     <!-- Hero Section -->
     <section id="home" class="hero section">
-      <div class="profile-image"><img src="profile_img.png" alt="profile-image"></div>
-      <h1>Hi,<br>Ich bin <span class="name">LKatze22</span></h1>
-      <p class="subtitle">Ich lerne gerade Web Development</p>
+      <div class="profile-image">
+        <img src="profile_img.png" alt="Profile Image">
+      </div>
+      <div class="typewriter-wrapper">
+        <span class="typewriter" id="changing-text"></span>
+        <span class="cursor"></span>
+      </div>
     </section>
 
     <!-- Main Content -->
     <main class="main-content">
       <!-- About Section -->
       <section id="about" class="about-section section">
-        <div class="about-image"><img src="profile_img.png" alt="profile-image"></div>
+        <div class="about-image">
+          <!-- Portfolio icon placeholder -->
+          <img src="portfolio_icon.png" alt="Portfolio Icon">
+        </div>
         <div class="about-content">
           <h2>ÜBER MICH</h2>
           <p class="about-text">
@@ -623,7 +792,6 @@
           </p>
         </div>
       </section>
- 
 
       <!-- Work Section -->
       <section id="work" class="work-section section">
@@ -659,7 +827,23 @@
             <div class="work-image">
               <div
                 style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
-                <code>&lt;/&gt;</code>
+                <svg width="80" height="80" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+
+                  <!-- Hintergrund mit Verlauf -->
+                  <rect x="76" y="76" width="360" height="360" rx="32" fill="url(#bgGradient)"
+                    filter="drop-shadow(0 8px 24px rgba(102, 126, 234, 0.3))" />
+
+                  <!-- Code-Symbol mit mehr Padding -->
+                  <path d="M186 336l-80-80 80-80M326 336l80-80-80-80" stroke="white" stroke-width="40"
+                    stroke-linecap="round" stroke-linejoin="round" fill="none"
+                    filter="drop-shadow(0 4px 12px rgba(0,0,0,0.3))" />
+                </svg>
               </div>
             </div>
             <div class="work-content">
@@ -667,6 +851,42 @@
               <p class="work-description">
                 Eine responsive Website zum Erlernen von Programmiersprachen mit interaktiven
                 Code-Beispielen und Übungen. Implementiert mit mehreren Code-Beispielen.
+              </p>
+            </div>
+          </div>
+
+          <div class="work-item">
+            <div class="work-image">
+              <div
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80">
+                  <!-- Hintergrund mit Farbverlauf wie beim Todo-Icon -->
+                  <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
+                      <stop offset="100%" style="stop-color:#a259ff;stop-opacity:1" />
+                    </linearGradient>
+                  </defs>
+                  <rect width="24" height="24" rx="4" fill="url(#grad1)" />
+
+                  <!-- Notiz Symbol (Blatt) -->
+                  <path d="M7 6h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" fill="none"
+                    stroke="white" stroke-width="1.6" />
+                  <line x1="9" y1="10" x2="15" y2="10" stroke="white" stroke-width="1.6" stroke-linecap="round" />
+                  <line x1="9" y1="14" x2="13" y2="14" stroke="white" stroke-width="1.6" stroke-linecap="round" />
+
+                  <!-- Stift Symbol, nach rechts verschoben -->
+                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z
+           M20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0
+           l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="white" transform="translate(20,13) scale(0.35) rotate(80)" />
+                </svg>
+              </div>
+            </div>
+            <div class="work-content">
+              <h3 class="work-title">Quick-Notes</h3>
+              <p class="work-description">
+                Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen.
+                Entwickelt mit HTML, CSS und JavaScript für eine nahtlose Benutzererfahrung.
               </p>
             </div>
           </div>
@@ -695,26 +915,10 @@
               </div>
             </div>
             <div class="work-content">
-              <h3 class="work-title">Discord Server Webseite</h3>
+              <h3 class="work-title">YNYB Webseite</h3>
               <p class="work-description">
-                Entwicklung einer Website inklusive Logo-Design,
-                Farbschema und Typografie für ein Discord Server.
-              </p>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image">
-              <div
-                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
-                📝
-              </div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">Quick-Notes</h3>
-              <p class="work-description">
-                Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen.
-                Entwickelt mit HTML, CSS und JavaScript für eine nahtlose Benutzererfahrung.
+                Entwicklung einer Website nach Wünschen von Hatilo, mit
+                Farbschema und Typografie für ein Discord Server um gemeinsam Spiele zu zocken.
               </p>
             </div>
           </div>
@@ -735,13 +939,11 @@
           </div>
         </div>
       </section>
-    <div class="carousel"></div>
-      <!-- Links Section -->
+      
       <section id="contact" class="links-section section">
         <div class="social-links">
-          
           <a href="https://github.com/LKatze22" class="social-link" target="_blank">Github</a>
-          </div>
+        </div>
       </section>
     </main>
   </div>
@@ -861,6 +1063,50 @@
         }
       });
     });
+
+    // Typewriter Effect
+    const texts = [
+      " Hi, ich bin LKatze22.",
+      " In meiner Freizeit programmiere ich gerne.",
+      " Schön das du meine Webseite besuchst! ",
+      " Du erfährst hier mehr über mich ",
+      " und ",
+      " siehst einige meiner Projekte.",
+    ];
+
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+    let isDeleting = false;
+    const speed = 100;
+    const pause = 1000;
+
+    function type() {
+      if (count === texts.length) count = 0;
+      currentText = texts[count];
+
+      if (isDeleting) {
+        letter = currentText.substring(0, index--);
+      } else {
+        letter = currentText.substring(0, index++);
+      }
+
+      document.getElementById('changing-text').textContent = letter;
+
+      if (!isDeleting && index === currentText.length) {
+        isDeleting = true;
+        setTimeout(type, pause);
+      } else if (isDeleting && index === 0) {
+        isDeleting = false;
+        count++;
+        setTimeout(type, 300);
+      } else {
+        setTimeout(type, speed);
+      }
+    }
+
+    type();
   </script>
 </body>
 
