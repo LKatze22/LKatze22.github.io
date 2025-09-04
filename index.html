@@ -139,6 +139,11 @@
       .cursor {
         background: #667eea;
       }
+
+      .slider-container {
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
     }
 
     .container {
@@ -196,10 +201,14 @@
 
     /* Blinking cursor animation */
     @keyframes blink {
-      0%, 50% {
+
+      0%,
+      50% {
         opacity: 1;
       }
-      51%, 100% {
+
+      51%,
+      100% {
         opacity: 0;
       }
     }
@@ -232,10 +241,12 @@
       background-clip: text;
       animation: pulse 2s infinite;
     }
+
     .logo img {
       border-radius: 12px;
-      
+
     }
+
     .nav-links {
       display: flex;
       gap: 30px;
@@ -275,7 +286,7 @@
 
     /* Hero Section */
     .hero section {
-      
+
       text-align: center;
       padding: 80px 0 60px;
       animation: fadeInUp 1s ease-out;
@@ -680,6 +691,12 @@
       margin-left: 2px;
     }
 
+    #home {
+      margin-top: 3rem;
+    }
+
+    /* Fixed Slider Styles */
+
     /* Responsive */
     @media (max-width: 768px) {
       .about-section {
@@ -720,9 +737,279 @@
       .typewriter-wrapper {
         font-size: 1.5em;
       }
+
+      .slider-container {
+        margin: 20px 10px;
+        padding: 15px;
+      }
     }
-    #home {
-      margin-top: 3rem;
+
+    .slider-container {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(30, 30, 30, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .slider-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .slider-header h2 {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .slider-subtitle {
+      color: #aaa;
+      font-size: 16px;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    }
+
+    .slider-wrapper {
+      display: flex;
+      width: 500%;
+      height: 100%;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .slide {
+      width: 20%;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+
+      transition: transform 0.8s ease;
+    }
+
+    .slide:hover img {
+      transform: scale(1.1);
+    }
+
+    .slide-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+      padding: 30px 20px 20px;
+      color: white;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+    }
+
+    .slide:hover .slide-overlay {
+      transform: translateY(0);
+    }
+
+    .slide-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .slide-description {
+      font-size: 14px;
+      line-height: 1.4;
+      color: #ddd;
+    }
+
+    .slider-controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .nav-btn {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-btn:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+    }
+
+    .nav-btn:active {
+      transform: translateY(-1px) scale(1.05);
+    }
+
+    .dots-container {
+      display: flex;
+      gap: 12px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .dot.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-color: rgba(102, 126, 234, 0.5);
+      transform: scale(1.2);
+      box-shadow: 0 0 15px rgba(102, 126, 234, 0.5);
+    }
+
+    .dot:hover {
+      background: rgba(255, 255, 255, 0.6);
+      transform: scale(1.1);
+    }
+
+    .project-info {
+      background: rgba(40, 40, 40, 0.8);
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+    }
+
+    .current-project {
+      font-size: 18px;
+      font-weight: 600;
+      color: #667eea;
+      margin-bottom: 10px;
+    }
+
+    .project-details {
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .auto-play-btn {
+      background: rgba(30, 30, 30, 0.8);
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      color: #667eea;
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      margin-left: 20px;
+    }
+
+    .auto-play-btn:hover {
+      background: rgba(102, 126, 234, 0.1);
+      border-color: rgba(102, 126, 234, 0.5);
+    }
+
+    .auto-play-btn.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-color: transparent;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .slider-container {
+        padding: 20px;
+        margin: 10px;
+      }
+
+      .slider {
+        height: 300px;
+      }
+
+      .slider-header h2 {
+        font-size: 24px;
+      }
+
+      .nav-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+      }
+
+      .slide-overlay {
+        padding: 20px 15px 15px;
+      }
+
+      .slide-title {
+        font-size: 16px;
+      }
+
+      .slide-description {
+        font-size: 12px;
+      }
+    }
+
+    /* Animation keyframes */
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateX(100px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .slider-container {
+      animation: slideIn 0.8s ease-out;
+    }
+
+    /* Glassmorphism effect */
+    .slider-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+      border-radius: 20px;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -746,8 +1033,8 @@
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#work" class="nav-link">Work</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a href="#work" class="nav-link">Projects</a></li>
+
         </ul>
       </nav>
     </div>
@@ -795,156 +1082,84 @@
 
       <!-- Work Section -->
       <section id="work" class="work-section section">
-        <h2>Projekte</h2>
-        <div class="work-grid">
-          <div class="work-item">
-            <div class="work-image">
-              <svg width="80" height="80" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
-                    <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:1" />
-                  </linearGradient>
-                </defs>
-                <rect x="64" y="64" width="384" height="384" rx="32" fill="url(#grad)" />
-                <path d="M140 256l80 80 160-160" stroke="white" stroke-width="40" stroke-linecap="round"
-                  stroke-linejoin="round" fill="none" />
-                <rect x="200" y="180" width="200" height="24" rx="12" fill="white" fill-opacity="0.3" />
-                <rect x="200" y="260" width="160" height="24" rx="12" fill="white" fill-opacity="0.3" />
-                <rect x="200" y="340" width="120" height="24" rx="12" fill="white" fill-opacity="0.3" />
-              </svg>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">To-Do List App</h3>
-              <p class="work-description">
-                Eine interaktive To-Do Liste mit lokaler Speicherung, gebaut mit HTML, CSS und JavaScript.
-                Features: Aufgaben hinzufügen, bearbeiten, löschen und als erledigt markieren usw.
-              </p>
+
+        <section id="contact" class="links-section section">
+          <div class="social-links">
+            <a href="https://github.com/LKatze22" class="social-link" target="_blank">Github</a>
+          </div>
+        </section>
+        <div class="slider-container">
+          <div class="slider-header">
+            <h2>Meine Projekte</h2>
+            <p class="slider-subtitle">Eine Auswahl meiner neuesten Arbeiten</p>
+          </div>
+
+          <div class="slider">
+            <div class="slider-wrapper" id="sliderWrapper">
+              <div class="slide">
+                <img src="todo.png" alt="To-Do App">
+                <div class="slide-overlay">
+                  <div class="slide-title">To-Do List App</div>
+                  <div class="slide-description">Eine interaktive To-Do Liste mit lokaler Speicherung, entwickelt mit
+                    HTML,
+                    CSS und JavaScript.</div>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="programmieren.png" alt="Programmier-Lernwebsite">
+                <div class="slide-overlay">
+                  <div class="slide-title">Programmier-Lernwebsite</div>
+                  <div class="slide-description">Responsive Website zum Erlernen von Programmiersprachen mit
+                    interaktiven
+                    Code-Beispielen.</div>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="quick-notes.png" alt="Quick Notes">
+                <div class="slide-overlay">
+                  <div class="slide-title">Quick-Notes App</div>
+                  <div class="slide-description">Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und
+                    Ideen.
+                  </div>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="ynyb.png" alt="YNYB Website">
+                <div class="slide-overlay">
+                  <div class="slide-title">YNYB Webseite</div>
+                  <div class="slide-description">Website für einen Discord Server mit modernem Design und Gaming-Fokus.
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
-          <div class="work-item">
-            <div class="work-image">
-              <div
-                style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
-                <svg width="80" height="80" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-                      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
-                    </linearGradient>
-                  </defs>
+          <div class="slider-controls">
+            <button class="nav-btn" id="prevBtn">&#10094;</button>
 
-                  <!-- Hintergrund mit Verlauf -->
-                  <rect x="76" y="76" width="360" height="360" rx="32" fill="url(#bgGradient)"
-                    filter="drop-shadow(0 8px 24px rgba(102, 126, 234, 0.3))" />
+            <div class="dots-container">
+              <span class="dot active" data-slide="0"></span>
+              <span class="dot" data-slide="1"></span>
+              <span class="dot" data-slide="2"></span>
+              <span class="dot" data-slide="3"></span>
 
-                  <!-- Code-Symbol mit mehr Padding -->
-                  <path d="M186 336l-80-80 80-80M326 336l80-80-80-80" stroke="white" stroke-width="40"
-                    stroke-linecap="round" stroke-linejoin="round" fill="none"
-                    filter="drop-shadow(0 4px 12px rgba(0,0,0,0.3))" />
-                </svg>
-              </div>
             </div>
-            <div class="work-content">
-              <h3 class="work-title">Programmier-Lernwebsite</h3>
-              <p class="work-description">
-                Eine responsive Website zum Erlernen von Programmiersprachen mit interaktiven
-                Code-Beispielen und Übungen. Implementiert mit mehreren Code-Beispielen.
-              </p>
-            </div>
+
+            <button class="nav-btn" id="nextBtn">&#10095;</button>
+
+            <button class="auto-play-btn active" id="autoPlayBtn">Auto</button>
           </div>
 
-          <div class="work-item">
-            <div class="work-image">
-              <div
-                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="80" height="80">
-                  <!-- Hintergrund mit Farbverlauf wie beim Todo-Icon -->
-                  <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style="stop-color:#4a9eff;stop-opacity:1" />
-                      <stop offset="100%" style="stop-color:#a259ff;stop-opacity:1" />
-                    </linearGradient>
-                  </defs>
-                  <rect width="24" height="24" rx="4" fill="url(#grad1)" />
-
-                  <!-- Notiz Symbol (Blatt) -->
-                  <path d="M7 6h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1z" fill="none"
-                    stroke="white" stroke-width="1.6" />
-                  <line x1="9" y1="10" x2="15" y2="10" stroke="white" stroke-width="1.6" stroke-linecap="round" />
-                  <line x1="9" y1="14" x2="13" y2="14" stroke="white" stroke-width="1.6" stroke-linecap="round" />
-
-                  <!-- Stift Symbol, nach rechts verschoben -->
-                  <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z
-           M20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0
-           l-1.83 1.83 3.75 3.75 1.83-1.83z" fill="white" transform="translate(20,13) scale(0.35) rotate(80)" />
-                </svg>
-              </div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">Quick-Notes</h3>
-              <p class="work-description">
-                Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen.
-                Entwickelt mit HTML, CSS und JavaScript für eine nahtlose Benutzererfahrung.
-              </p>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image">
-              <div
-                style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
-                🍫
-              </div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">Produktseite Design</h3>
-              <p class="work-description">
-                Eine moderne Produktpräsentationsseite mit animierten Elementen und
-                responsivem Design. Fokus auf visuelle Ästhetik und Benutzerfreundlichkeit.
-              </p>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image">
-              <div
-                style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
-                🎮
-              </div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">YNYB Webseite</h3>
-              <p class="work-description">
-                Entwicklung einer Website nach Wünschen von Hatilo, mit
-                Farbschema und Typografie für ein Discord Server um gemeinsam Spiele zu zocken.
-              </p>
-            </div>
-          </div>
-
-          <div class="work-item">
-            <div class="work-image">
-              <div
-                style="background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 40px;">
-                ❓
-              </div>
-            </div>
-            <div class="work-content">
-              <h3 class="work-title">Das nächste Projekt</h3>
-              <p class="work-description">
-                Das nächste Projekt folgt bald...
-              </p>
+          <div class="project-info">
+            <div class="current-project" id="currentProject">To-Do List App</div>
+            <div class="project-details" id="projectDetails">Eine interaktive To-Do Liste mit lokaler Speicherung,
+              entwickelt
+              mit HTML, CSS und JavaScript. Features: Aufgaben hinzufügen, bearbeiten, löschen und als erledigt
+              markieren.
             </div>
           </div>
         </div>
-      </section>
-      
-      <section id="contact" class="links-section section">
-        <div class="social-links">
-          <a href="https://github.com/LKatze22" class="social-link" target="_blank">Github</a>
-        </div>
-      </section>
     </main>
   </div>
 
@@ -1043,26 +1258,8 @@
       });
     });
 
-    // Add some Easter egg interactions
-    let clickCount = 0;
-    document.querySelectorAll('.profile-image, .about-image').forEach(image => {
-      image.addEventListener('click', function () {
-        clickCount++;
-        this.style.transform = `scale(1.2) rotate(${clickCount * 45}deg)`;
 
-        setTimeout(() => {
-          this.style.transform = '';
-        }, 300);
 
-        if (clickCount >= 5) {
-          document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%)';
-          setTimeout(() => {
-            document.body.style.background = 'linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%)';
-            clickCount = 0;
-          }, 2000);
-        }
-      });
-    });
 
     // Typewriter Effect
     const texts = [
@@ -1107,6 +1304,174 @@
     }
 
     type();
+
+
+    class ProjectSlider {
+      constructor() {
+        this.currentSlide = 0;
+        this.totalSlides = 4;
+        this.isAutoPlay = true;
+        this.autoPlayInterval = null;
+        this.autoPlayDelay = 4000;
+
+        this.sliderWrapper = document.getElementById('sliderWrapper');
+        this.dots = document.querySelectorAll('.dot');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.autoPlayBtn = document.getElementById('autoPlayBtn');
+        this.currentProject = document.getElementById('currentProject');
+        this.projectDetails = document.getElementById('projectDetails');
+
+        this.projects = [
+          {
+            title: "To-Do List App",
+            description: "Eine interaktive To-Do Liste mit lokaler Speicherung, entwickelt mit HTML, CSS und JavaScript. Features: Aufgaben hinzufügen, bearbeiten, löschen und als erledigt markieren."
+          },
+          {
+            title: "Programmier-Lernwebsite",
+            description: "Eine responsive Website zum Erlernen von Programmiersprachen mit interaktiven Code-Beispielen und Übungen. Implementiert mit mehreren praktischen Beispielen."
+          },
+          {
+            title: "Quick-Notes App",
+            description: "Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen. Entwickelt mit HTML, CSS und JavaScript für eine nahtlose Benutzererfahrung."
+          },
+          {
+            title: "YNYB Webseite",
+            description: "Entwicklung einer Website nach Wünschen von Hatilo, mit speziellem Farbschema und Typografie für einen Discord Server um gemeinsam Spiele zu zocken."
+          }
+
+        ];
+
+        this.init();
+      }
+
+      init() {
+        this.updateSlider();
+        this.startAutoPlay();
+        this.bindEvents();
+      }
+
+      bindEvents() {
+        this.prevBtn.addEventListener('click', () => this.prevSlide());
+        this.nextBtn.addEventListener('click', () => this.nextSlide());
+        this.autoPlayBtn.addEventListener('click', () => this.toggleAutoPlay());
+
+        this.dots.forEach((dot, index) => {
+          dot.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        // Pause auto-play on hover
+        this.sliderWrapper.addEventListener('mouseenter', () => {
+          if (this.isAutoPlay) this.pauseAutoPlay();
+        });
+
+        this.sliderWrapper.addEventListener('mouseleave', () => {
+          if (this.isAutoPlay) this.startAutoPlay();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'ArrowLeft') this.prevSlide();
+          if (e.key === 'ArrowRight') this.nextSlide();
+          if (e.key === ' ') {
+            e.preventDefault();
+            this.toggleAutoPlay();
+          }
+        });
+
+        // Touch/Swipe support
+        let startX = 0;
+        let endX = 0;
+
+        this.sliderWrapper.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+        });
+
+        this.sliderWrapper.addEventListener('touchend', (e) => {
+          endX = e.changedTouches[0].clientX;
+          const diff = startX - endX;
+
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+              this.nextSlide();
+            } else {
+              this.prevSlide();
+            }
+          }
+        });
+      }
+
+      updateSlider() {
+        const offset = -this.currentSlide * 20;
+        this.sliderWrapper.style.transform = `translateX(${offset}%)`;
+
+        // Update dots
+        this.dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === this.currentSlide);
+        });
+
+        // Update project info
+        const project = this.projects[this.currentSlide];
+        this.currentProject.textContent = project.title;
+        this.projectDetails.textContent = project.description;
+      }
+
+      nextSlide() {
+        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
+        this.updateSlider();
+      }
+
+      prevSlide() {
+        this.currentSlide = (this.currentSlide - 1 + this.totalSlides) % this.totalSlides;
+        this.updateSlider();
+      }
+
+      goToSlide(index) {
+        this.currentSlide = index;
+        this.updateSlider();
+      }
+
+      startAutoPlay() {
+        if (this.isAutoPlay && !this.autoPlayInterval) {
+          this.autoPlayInterval = setInterval(() => {
+            this.nextSlide();
+          }, this.autoPlayDelay);
+        }
+      }
+
+      pauseAutoPlay() {
+        if (this.autoPlayInterval) {
+          clearInterval(this.autoPlayInterval);
+          this.autoPlayInterval = null;
+        }
+      }
+
+      toggleAutoPlay() {
+        this.isAutoPlay = !this.isAutoPlay;
+        this.autoPlayBtn.classList.toggle('active', this.isAutoPlay);
+        this.autoPlayBtn.textContent = this.isAutoPlay ? 'Auto' : 'Manual';
+
+        if (this.isAutoPlay) {
+          this.startAutoPlay();
+        } else {
+          this.pauseAutoPlay();
+        }
+      }
+    }
+
+    // Initialize slider when DOM is loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      new ProjectSlider();
+    });
+
+    // Add smooth loading animation
+    window.addEventListener('load', () => {
+      document.body.style.opacity = '0';
+      document.body.style.transition = 'opacity 0.5s ease';
+      setTimeout(() => {
+        document.body.style.opacity = '1';
+      }, 100);
+    });
   </script>
 </body>
 
