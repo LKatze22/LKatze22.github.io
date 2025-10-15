@@ -798,11 +798,26 @@
       height: 100%;
       position: relative;
       overflow: hidden;
+      object-fit: cover;
+    }
+
+    .slide-link {
+      text-decoration: underline;
+      color: #3d99d3;
+    }
+
+    .slide-text-dark {
+      color: #000000;
+    }
+
+    .slide-text-dark a {
+      color: #023352;
     }
 
     .slide img {
       width: 100%;
       height: 100%;
+      object-fit: cover;
 
       transition: transform 0.8s ease;
     }
@@ -1027,9 +1042,7 @@
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <div class="logo">
-          <img width="60" height="80" src="profile_img.png" alt="Profile Image">
-        </div>
+
         <ul class="nav-links">
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
@@ -1102,16 +1115,18 @@
                   <div class="slide-title">To-Do List App</div>
                   <div class="slide-description">Eine interaktive To-Do Liste mit lokaler Speicherung, entwickelt mit
                     HTML,
-                    CSS und JavaScript.</div>
+                    CSS und JavaScript. <a class="slide-link" href="https://lkatze22.github.io/todo/"
+                      target="_blank">Zur
+                      Webseite</a></div>
                 </div>
               </div>
               <div class="slide">
                 <img src="programmieren.png" alt="Programmier-Lernwebsite">
                 <div class="slide-overlay">
                   <div class="slide-title">Programmier-Lernwebsite</div>
-                  <div class="slide-description">Responsive Website zum Erlernen von Programmiersprachen mit
-                    interaktiven
-                    Code-Beispielen.</div>
+                  <div class="slide-description"><span class="slide-text-dark">Website mit Tipps und nützlichen Links
+                      zum Programmieren lernen. <a class="slide-link" href="https://lkatze22.github.io/programming/"
+                        target="_blank">Zur Webseite</a></span></div>
                 </div>
               </div>
               <div class="slide">
@@ -1119,7 +1134,8 @@
                 <div class="slide-overlay">
                   <div class="slide-title">Quick-Notes App</div>
                   <div class="slide-description">Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und
-                    Ideen.
+                    Ideen. <a class="slide-link" href="https://lkatze22.github.io/quick-notes/" target="_blank">Zur
+                      Webseite</a>
                   </div>
                 </div>
               </div>
@@ -1127,7 +1143,9 @@
                 <img src="ynyb.png" alt="YNYB Website">
                 <div class="slide-overlay">
                   <div class="slide-title">YNYB Webseite</div>
-                  <div class="slide-description">Website für einen Discord Server mit modernem Design und Gaming-Fokus.
+                  <div class="slide-description"><span class="slide-text-dark">Website für einen Discord Server mit
+                      modernem Design und Gaming-Fokus. <a class="slide-link"
+                        href="https://hatiloyt.github.io/YNYB-homepage/" target="_blank">Zur Webseite</a></span>
                   </div>
                 </div>
               </div>
