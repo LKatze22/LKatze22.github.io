@@ -1115,9 +1115,7 @@
                   <div class="slide-title">To-Do List App</div>
                   <div class="slide-description">Eine interaktive To-Do Liste mit lokaler Speicherung, entwickelt mit
                     HTML,
-                    CSS und JavaScript. <a class="slide-link" href="https://lkatze22.github.io/todo/"
-                      target="_blank">Zur
-                      Webseite</a></div>
+                    CSS und JavaScript.</div>
                 </div>
               </div>
               <div class="slide">
@@ -1125,8 +1123,7 @@
                 <div class="slide-overlay">
                   <div class="slide-title">Programmier-Lernwebsite</div>
                   <div class="slide-description"><span class="slide-text-dark">Website mit Tipps und nützlichen Links
-                      zum Programmieren lernen. <a class="slide-link" href="https://lkatze22.github.io/programming/"
-                        target="_blank">Zur Webseite</a></span></div>
+                      zum Programmieren lernen. </span></div>
                 </div>
               </div>
               <div class="slide">
@@ -1134,8 +1131,7 @@
                 <div class="slide-overlay">
                   <div class="slide-title">Quick-Notes App</div>
                   <div class="slide-description">Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und
-                    Ideen. <a class="slide-link" href="https://lkatze22.github.io/quick-notes/" target="_blank">Zur
-                      Webseite</a>
+                    Ideen. 
                   </div>
                 </div>
               </div>
@@ -1144,8 +1140,7 @@
                 <div class="slide-overlay">
                   <div class="slide-title">YNYB Webseite</div>
                   <div class="slide-description"><span class="slide-text-dark">Website für einen Discord Server mit
-                      modernem Design und Gaming-Fokus. <a class="slide-link"
-                        href="https://hatiloyt.github.io/YNYB-homepage/" target="_blank">Zur Webseite</a></span>
+                      modernem Design und Gaming-Fokus.</span>
                   </div>
                 </div>
               </div>
@@ -1344,24 +1339,29 @@
           {
             title: "To-Do List App",
             description: "Eine interaktive To-Do Liste mit lokaler Speicherung, entwickelt mit HTML, CSS und JavaScript. Features: Aufgaben hinzufügen, bearbeiten, löschen und als erledigt markieren."
+             ,link: "https://lkatze22.github.io/todo/"
           },
           {
             title: "Programmier-Lernwebsite",
             description: "Eine responsive Website zum Erlernen von Programmiersprachen mit interaktiven Code-Beispielen und Übungen. Implementiert mit mehreren praktischen Beispielen."
+             ,link: "https://lkatze22.github.io/programming/"
           },
           {
             title: "Quick-Notes App",
             description: "Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen. Entwickelt mit HTML, CSS und JavaScript für eine nahtlose Benutzererfahrung."
+             ,link: "https://lkatze22.github.io/quick-notes/"
           },
           {
             title: "YNYB Webseite",
             description: "Entwicklung einer Website nach Wünschen von Hatilo, mit speziellem Farbschema und Typografie für einen Discord Server um gemeinsam Spiele zu zocken."
+             ,link: "https://hatiloyt.github.io/YNYB-homepage/"
           }
 
         ];
 
         this.init();
       }
+      
 
       init() {
         this.updateSlider();
@@ -1431,7 +1431,8 @@
         // Update project info
         const project = this.projects[this.currentSlide];
         this.currentProject.textContent = project.title;
-        this.projectDetails.textContent = project.description;
+        this.projectDetails.innerHTML = project.description + 
+          (project.link ? ` <a class="slide-link" href="${project.link}" target="_blank">Zur Webseite</a>` : '');
       }
 
       nextSlide() {
