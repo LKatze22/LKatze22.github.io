@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="de">
 
@@ -1056,14 +1055,11 @@
 
   <div class="container">
     <!-- Hero Section -->
-    <section id="home" class="hero section">
-      <div class="profile-image">
-        <img src="profile_img.png" alt="Profile Image">
-      </div>
-      <div class="typewriter-wrapper">
-        <span class="typewriter" id="changing-text"></span>
-        <span class="cursor"></span>
-      </div>
+
+    <div class="typewriter-wrapper">
+      <span class="typewriter" id="changing-text"></span>
+      <span class="cursor"></span>
+    </div>
     </section>
 
     <!-- Main Content -->
@@ -1072,7 +1068,7 @@
       <section id="about" class="about-section section">
         <div class="about-image">
           <!-- Portfolio icon placeholder -->
-          <img src="portfolio_icon.png" alt="Portfolio Icon">
+          <img src="LKatze22.jpg" alt="Portfolio Icon">
         </div>
         <div class="about-content">
           <h2>ÜBER MICH</h2>
@@ -1132,7 +1128,7 @@
                 <div class="slide-overlay">
                   <div class="slide-title">Quick-Notes App</div>
                   <div class="slide-description">Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und
-                    Ideen. 
+                    Ideen.
                   </div>
                 </div>
               </div>
@@ -1279,7 +1275,6 @@
     const texts = [
       " Hi, ich bin LKatze22.",
       " In meiner Freizeit programmiere ich gerne.",
-      " Schön das du meine Webseite besuchst! ",
       " Du erfährst hier mehr über mich ",
       " und ",
       " siehst einige meiner Projekte.",
@@ -1340,29 +1335,29 @@
           {
             title: "To-Do List App",
             description: "Eine interaktive To-Do Liste mit lokaler Speicherung, entwickelt mit HTML, CSS und JavaScript. Features: Aufgaben hinzufügen, bearbeiten, löschen und als erledigt markieren."
-             ,link: "https://lkatze22.github.io/todo/"
+            , link: "https://lkatze22.github.io/todo/"
           },
           {
             title: "Programmier-Lernwebsite",
             description: "Eine responsive Website zum Erlernen von Programmiersprachen mit interaktiven Code-Beispielen und Übungen. Implementiert mit mehreren praktischen Beispielen."
-             ,link: "https://lkatze22.github.io/programming/"
+            , link: "https://lkatze22.github.io/programming/"
           },
           {
             title: "Quick-Notes App",
             description: "Eine einfache Notizen-App zum schnellen Erfassen von Gedanken und Ideen. Entwickelt mit HTML, CSS und JavaScript für eine nahtlose Benutzererfahrung."
-             ,link: "https://lkatze22.github.io/quick-notes/"
+            , link: "https://lkatze22.github.io/quick-notes/"
           },
           {
             title: "YNYB Webseite",
             description: "Entwicklung einer Website nach Wünschen von Hatilo, mit speziellem Farbschema und Typografie für einen Discord Server um gemeinsam Spiele zu zocken."
-             ,link: "https://hatiloyt.github.io/YNYB-homepage/"
+            , link: "https://hatiloyt.github.io/YNYB-homepage/"
           }
 
         ];
 
         this.init();
       }
-      
+
 
       init() {
         this.updateSlider();
@@ -1432,7 +1427,7 @@
         // Update project info
         const project = this.projects[this.currentSlide];
         this.currentProject.textContent = project.title;
-        this.projectDetails.innerHTML = project.description + 
+        this.projectDetails.innerHTML = project.description +
           (project.link ? ` <a class="slide-link" href="${project.link}" target="_blank">Zur Webseite</a>` : '');
       }
 
@@ -1494,4 +1489,5 @@
     });
   </script>
 </body>
+
 </html>
