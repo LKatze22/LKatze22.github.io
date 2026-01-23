@@ -8,7 +8,7 @@ Welcome to my portfolio website! This is a showcase of my work, skills, and proj
 - Contact form powered by HTML and JavaScript
 
 ## Screenshot
-![Portfolio Screenshot](screenshot.png)2
+![Portfolio Screenshot](screenshot.png)
 
 ## Technologies Used
 - **HTML** - Structure and content
