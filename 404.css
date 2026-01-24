@@ -1,0 +1,84 @@
+body {
+  background: linear-gradient(to bottom, #1d1d1d, #000000);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.big-404 {
+  font-size: 12rem;
+  text-align: center;
+  margin-top: 20vh;
+  margin-bottom: 2rem;
+  color: #ff5555;
+  font-family: "Arial Black", Arial, sans-serif;
+}
+.description {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.home-link-text {
+  font-size: 1.2rem;
+  text-align: center;
+  color: #cccccc;
+  margin-top: 2rem;
+  font-family: Arial, sans-serif;
+}
+.button {
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cc6d47;
+  background-color: #ff8767;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+.button .button__text {
+  transform: translateX(30px);
+  color: #fff;
+  font-weight: 600;
+}
+.button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 40px;
+  width: 39px;
+  background: linear-gradient(135deg, #ff8787, #ff9a56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button .svg {
+  width: 30px;
+  stroke: #fff;
+}
+.button:hover {
+  background: #ff6b6b;
+}
+.button:hover .button__text {
+  color: transparent;
+}
+.button:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+.button:active .button__icon {
+  background: linear-gradient(135deg, #e67a7a, #e68a4e);
+}
+.button:active {
+  border: 1px solid #b85d3f;
+}
+.back-button {
+  display: flex;
+  justify-content: center;
+}
