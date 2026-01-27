@@ -31,119 +31,117 @@
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    /* Light Mode Styles */
-    @media (prefers-color-scheme: light) {
-      body {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        color: #212529;
-      }
+    /* Light Mode Styles (attribute-based) */
+    [data-theme="light"] body {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #212529;
+    }
 
-      .header {
-        background: rgba(255, 255, 255, 0.95);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-      }
+    [data-theme="light"] .header {
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
-      .nav-links a {
-        color: #6c757d;
-      }
+    [data-theme="light"] .nav-links a {
+      color: #6c757d;
+    }
 
-      .nav-links a:hover,
-      .nav-links a.active {
-        color: #667eea;
-      }
+    [data-theme="light"] .nav-links a:hover,
+    [data-theme="light"] .nav-links a.active {
+      color: #667eea;
+    }
 
-      .hero h1 {
-        color: #212529;
-      }
+    [data-theme="light"] .hero h1 {
+      color: #212529;
+    }
 
-      .hero .subtitle {
-        color: #6c757d;
-      }
+    [data-theme="light"] .hero .subtitle {
+      color: #6c757d;
+    }
 
-      .about-section {
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-      }
+    [data-theme="light"] .about-section {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
-      .about-section:hover {
-        border-color: rgba(102, 126, 234, 0.3);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      }
+    [data-theme="light"] .about-section:hover {
+      border-color: rgba(102, 126, 234, 0.3);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
 
-      .about-text {
-        color: #495057;
-      }
+    [data-theme="light"] .about-text {
+      color: #495057;
+    }
 
-      .about-text:hover {
-        color: #212529;
-      }
+    [data-theme="light"] .about-text:hover {
+      color: #212529;
+    }
 
-      .work-item {
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-      }
+    [data-theme="light"] .work-item {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
-      .work-item:hover {
-        border-color: rgba(102, 126, 234, 0.5);
-        box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
-      }
+    [data-theme="light"] .work-item:hover {
+      border-color: rgba(102, 126, 234, 0.5);
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+    }
 
-      .work-title {
-        color: #212529;
-      }
+    [data-theme="light"] .work-title {
+      color: #212529;
+    }
 
-      .work-item:hover .work-title {
-        color: #667eea;
-      }
+    [data-theme="light"] .work-item:hover .work-title {
+      color: #667eea;
+    }
 
-      .work-description {
-        color: #6c757d;
-      }
+    [data-theme="light"] .work-description {
+      color: #6c757d;
+    }
 
-      .work-item:hover .work-description {
-        color: #495057;
-      }
+    [data-theme="light"] .work-item:hover .work-description {
+      color: #495057;
+    }
 
-      .work-item:hover .work-content {
-        background: rgba(248, 249, 250, 0.5);
-      }
+    [data-theme="light"] .work-item:hover .work-content {
+      background: rgba(248, 249, 250, 0.5);
+    }
 
-      .social-link {
-        background: rgba(255, 255, 255, 0.9);
-        color: #6c757d;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-      }
+    [data-theme="light"] .social-link {
+      background: rgba(255, 255, 255, 0.9);
+      color: #6c757d;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
 
-      .social-link:hover {
-        color: white;
-      }
+    [data-theme="light"] .social-link:hover {
+      color: white;
+    }
 
-      .footer {
-        background: rgba(248, 249, 250, 0.95);
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
-        color: #6c757d;
-      }
+    [data-theme="light"] .footer {
+      background: rgba(248, 249, 250, 0.95);
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      color: #6c757d;
+    }
 
-      .footer:hover p {
-        color: #667eea;
-      }
+    [data-theme="light"] .footer:hover p {
+      color: #667eea;
+    }
 
-      .loader {
-        background: #f8f9fa;
-      }
+    [data-theme="light"] .loader {
+      background: #f8f9fa;
+    }
 
-      .loader-text {
-        color: #667eea;
-      }
+    [data-theme="light"] .loader-text {
+      color: #667eea;
+    }
 
-      .cursor {
-        background: #667eea;
-      }
+    [data-theme="light"] .cursor {
+      background: #667eea;
+    }
 
-      .slider-container {
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-      }
+    [data-theme="light"] .slider-container {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .container {
@@ -695,6 +693,72 @@
       margin-top: 3rem;
     }
 
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-card);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary-color);
+      transform: scale(1.05);
+    }
+
+    .sun-icon,
+    .moon-icon {
+      color: var(--text-secondary);
+      transition: all var(--transition-normal);
+    }
+
+    .moon-icon {
+      display: none;
+    }
+
+    [data-theme="light"] .sun-icon {
+      display: none;
+    }
+
+    [data-theme="light"] .moon-icon {
+      display: block;
+    }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: var(--spacing-xs);
+    }
+
+    .mobile-toggle span {
+      width: 25px;
+      height: 2px;
+      background: var(--text-primary);
+      transition: all var(--transition-normal);
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translateY(7px);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translateY(-7px);
+    }
+
+
     /* Fixed Slider Styles */
 
     /* Responsive */
@@ -1033,6 +1097,62 @@
       border-radius: 20px;
       pointer-events: none;
     }
+
+    .hero-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3xl);
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.5em 1.5em;
+      background: #232323;
+      border: 1.5px solid #292929;
+      border-radius: 999px;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #fff;
+      margin: 2em 0 1.5em 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      animation: fadeInDown 1s ease;
+      min-width: 0;
+      max-width: 100%;
+      position: relative;
+    }
+
+    .badge-dot {
+      width: 12px;
+      height: 12px;
+      background: #10b981;
+      border-radius: 50%;
+      margin-right: 10px;
+      box-shadow: 0 0 0 2px #181818;
+      flex-shrink: 0;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    [data-theme="light"] .hero-badge {
+      background: #f8f9fa;
+      border: 1.5px solid #e0e0e0;
+      color: #222;
+    }
+
+    [data-theme="light"] .badge-dot {
+      box-shadow: 0 0 0 2px #f8f9fa;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #10b981;
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
   </style>
 </head>
 
@@ -1054,15 +1174,43 @@
           <li><a href="#home" class="nav-link active">Home</a></li>
           <li><a href="#about" class="nav-link">About</a></li>
           <li><a href="#work" class="nav-link">Projects</a></li>
-
-        </ul>
+          <div class="nav-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+              <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+            </button>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+      </nav>
+      </ul>
       </nav>
     </div>
   </header>
 
   <div class="container">
     <!-- Hero Section -->
-
+    <div class="hero-badge" data-aos="fade-down">
+      <span class="badge-dot"></span>
+      Verfügbar für Projekte
+    </div>
     <div class="typewriter-wrapper">
       <span class="typewriter" id="changing-text"></span>
       <span class="cursor"></span>
@@ -1501,6 +1649,19 @@
       setTimeout(() => {
         document.body.style.opacity = '1';
       }, 100);
+    });
+
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+
+    document.documentElement.setAttribute('data-theme', currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const newTheme = theme === 'dark' ? 'light' : 'dark';
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
     });
   </script>
 </body>
