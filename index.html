@@ -597,25 +597,9 @@
       transform: translateY(-5px) scale(1.05);
     }
 
-    /* Footer */
-    .footer {
-      background: rgba(20, 20, 20, 0.9);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #aaa;
-      text-align: center;
-      padding: 30px 0;
-      margin-top: 60px;
-      animation: fadeIn 0.8s ease-out;
-    }
 
-    .footer p {
-      font-size: 14px;
-      transition: color 0.3s ease;
-    }
 
-    .footer:hover p {
-      color: #667eea;
-    }
+
 
     /* Scroll Progress Bar */
     .scroll-progress {
@@ -1153,6 +1137,70 @@
       border-radius: 50%;
       animation: pulse 2s ease infinite;
     }
+
+    .footer {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border-color);
+      padding: var(--spacing-2xl) 0 var(--spacing-lg);
+      margin-top: var(--spacing-3xl);
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--spacing-lg);
+      text-align: center;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    .footer-logo img {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      border: 2px solid var(--primary-color);
+    }
+
+    .footer-text {
+      color: var(--text-secondary);
+      max-width: 500px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-xl);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      transition: color var(--transition-normal);
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-color);
+    }
+
+    .footer-bottom {
+      margin-top: var(--spacing-xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--border-color);
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.875rem;
+    }
+
+    .footer_link {
+      margin-right: 1rem;
+    }
   </style>
 </head>
 
@@ -1339,7 +1387,24 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>© 2025 LKatze22. Alle Rechte vorbehalten.</p>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <img src="LKatze22.jpg" alt="LKatze22" width="40" height="40">
+          <span>LKatze<span class="accent">22</span></span>
+        </div>
+        <p class="footer-text">
+          Entwickelt mit ❤️ von LKatze22
+        </p>
+        <div class="footer-links">
+          <a class="footer_link" href="#home">Home</a>
+          <a class="footer_link" href="#about">Über mich</a>
+          <a class="footer_link" href="#projects">Projekte</a>
+
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 LKatze22. Alle Rechte vorbehalten.</p>
+      </div>
     </div>
   </footer>
 
