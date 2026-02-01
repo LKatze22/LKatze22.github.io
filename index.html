@@ -8,6 +8,9 @@
   <link rel="icon" type="x-icon" href="x-icon.png">
   <meta name="theme-color" content="#1d1d1d">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -138,6 +141,7 @@
 
     .nav {
       display: flex;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       justify-content: space-between;
       align-items: center;
       padding: 15px 0;
@@ -244,6 +248,10 @@
       margin-bottom: 30px;
     }
 
+    [data-theme="light"] .hero-badge {
+      border: 1px solid rgba(0, 0, 0, 0.250);
+    }
+
     .badge-dot {
       width: 8px;
       height: 8px;
@@ -283,7 +291,11 @@
     }
 
     .hero-description {
-      font-size: 1.125rem;
+      font-family: "Playwrite NZ Basic", cursive;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1.25rem;
       color: #a0aec0;
       line-height: 1.8;
       margin-bottom: 40px;
@@ -329,6 +341,10 @@
       background: rgba(255, 255, 255, 0.05);
       color: #ffffff;
       border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    [data-theme="light"] .btn-secondary {
+      background: #a0aec0
     }
 
     .btn-secondary:hover {
@@ -426,14 +442,18 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      font-size: 18px;
+      font-size: 28px;
       font-weight: 700;
       margin-bottom: 20px;
     }
 
     .about-text {
+      font-family: "Playwrite NZ Basic", cursive;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
       color: #ddd;
-      font-size: 14px;
+      font-size: 1, 125rem;
       line-height: 1.7;
       margin-bottom: 15px;
     }
@@ -496,8 +516,12 @@
     }
 
     .slider-subtitle {
+      font-family: "Playwrite NZ Basic", cursive;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
       color: #aaa;
-      font-size: 16px;
+      font-size: 1rem;
     }
 
     .slider {
@@ -609,6 +633,11 @@
       transition: all 0.3s ease;
     }
 
+    [data-theme="light"] .dot {
+      background: #979797;
+
+    }
+
     .dot.active {
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       transform: scale(1.2);
@@ -623,6 +652,11 @@
       text-align: center;
     }
 
+    [data-theme="light"] .project-info {
+      background: rgba(255, 255, 255, 0);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+    }
+
     .current-project {
       font-size: 18px;
       font-weight: 600;
@@ -631,7 +665,12 @@
     }
 
     .project-details {
-      color: #ccc;
+      font-family: "Playwrite NZ Basic", cursive;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 1rem;
+      color: #979797;
       line-height: 1.6;
     }
 
@@ -662,7 +701,12 @@
       background: rgba(30, 30, 30, 0.95);
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       padding: 40px 0 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
       margin-top: 60px;
+    }
+
+    [data-theme="light"] .footer {
+      background: rgba(255, 255, 255, 0.95);
     }
 
     .footer-content {
@@ -700,11 +744,19 @@
       color: #a0aec0;
     }
 
+    [data-theme="light"] .footer-text {
+      color: #2c2e30;
+    }
+
     .footer-links {
       display: flex;
       gap: 30px;
       flex-wrap: wrap;
       justify-content: center;
+    }
+
+    [data-theme="light"] .footer-links a {
+      color: #474e559c;
     }
 
     .footer-links a {
@@ -722,8 +774,12 @@
       padding-top: 20px;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
       text-align: center;
-      color: #a0aec0;
+      color: #adb2b8;
       font-size: 0.875rem;
+    }
+
+    [data-theme="light"] .footer-bottom {
+      color: #a0aec0;
     }
 
     /* Loading */
