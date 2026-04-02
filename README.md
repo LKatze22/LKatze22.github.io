@@ -3,10 +3,10 @@
 Welcome to my portfolio website! This is a showcase of my work, skills, and projects that I’ve crafted as a web developer. Visit the live site here: [My Portfolio](https://lkatz22.github.io).
 
 ## Features
+- Stunning Hero Section 
 - Responsive design for all screen sizes
 - Projects gallery with previews and links
-- Contact form powered by HTML and JavaScript
-
+- About me section
 ## Screenshot
 ![Portfolio Screenshot](screenshot.png)
 
