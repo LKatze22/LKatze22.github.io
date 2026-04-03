@@ -12,6 +12,14 @@
     content="Willkommen auf meinem Portfolio! Hier findest du eine Auswahl meiner Projekte, meine Fähigkeiten und mehr über mich als Web Developer. Ich bin leidenschaftlich daran interessiert, kreative und funktionale Webanwendungen zu entwickeln. Schau dich um und entdecke, was ich zu bieten habe!">
 
   <style>
+    @font-face {
+      font-family: "Datatype";
+      src: url("./fonts/Datatype-VariableFont_wdth_wght.woff") format("woff2") url("./fonts/Datatype-VariableFont_wdth_wght.woff") format("woff");
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -23,8 +31,12 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
-      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+      font-family: Arial, sans-serif;
+      background-color: #0f0f0f;
+      background-image:
+        radial-gradient(circle, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+        linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+      background-size: 28px 28px, cover;
       color: #ffffff;
       line-height: 1.6;
       min-height: 100vh;
@@ -36,7 +48,11 @@
 
     /* Light Mode Styles */
     [data-theme="light"] body {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background-color: #f8f9fa;
+      background-image:
+        radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1px),
+        linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      background-size: 28px 28px, cover;
       color: #212529;
     }
 
@@ -220,6 +236,15 @@
       display: block;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Datatype", Arial, sans-serif;
+    }
+
     /* Hero Section */
     .hero-section {
       min-height: 85vh;
@@ -233,6 +258,53 @@
     .hero-content {
       max-width: 800px;
       margin: 0 auto;
+    }
+
+    .hero-avatar-wrap {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-avatar-wrap img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      border: 3px solid rgba(102, 126, 234, 0.4);
+    }
+
+    .hero-avatar-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: #667eea;
+      border-right-color: #764ba2;
+      animation: spin-ring 3s linear infinite;
+    }
+
+    .hero-avatar-ring-2 {
+      position: absolute;
+      inset: 6px;
+      border-radius: 50%;
+      border: 1.5px solid transparent;
+      border-bottom-color: #764ba2;
+      border-left-color: #667eea;
+      animation: spin-ring 2s linear infinite reverse;
+      opacity: 0.5;
+    }
+
+    @keyframes spin-ring {
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .hero-badge {
@@ -261,6 +333,7 @@
     }
 
     .hero-title {
+      font-family: "Datatype", Arial, sans-serif;
       font-size: 4rem;
       font-weight: 900;
       line-height: 1.1;
@@ -279,7 +352,7 @@
       color: #a0aec0;
       margin-bottom: 20px;
       min-height: 2.5rem;
-      font-family: 'Courier New', monospace;
+      font-family: "Datatype", monospace;
     }
 
     .typing-text {
@@ -291,8 +364,7 @@
     }
 
     .hero-description {
-      font-family: "Playwrite NZ Basic", cursive;
-      font-optical-sizing: auto;
+      font-family: Arial, sans-serif;
       font-weight: 400;
       font-style: normal;
       font-size: 1.25rem;
@@ -419,12 +491,19 @@
       border-color: rgba(102, 126, 234, 0.3);
     }
 
+    .about-image-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      flex-shrink: 0;
+    }
+
     .about-image {
       width: 120px;
       height: 120px;
       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       border-radius: 12px;
-      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -449,8 +528,7 @@
     }
 
     .about-text {
-      font-family: "Playwrite NZ Basic", cursive;
-      font-optical-sizing: auto;
+      font-family: Arial, sans-serif;
       font-weight: 400;
       font-style: normal;
       color: #ddd;
@@ -517,8 +595,7 @@
     }
 
     .slider-subtitle {
-      font-family: "Playwrite NZ Basic", cursive;
-      font-optical-sizing: auto;
+      font-family: Arial, sans-serif;
       font-weight: 400;
       font-style: normal;
       color: #aaa;
@@ -666,8 +743,7 @@
     }
 
     .project-details {
-      font-family: "Playwrite NZ Basic", cursive;
-      font-optical-sizing: auto;
+      font-family: Arial, sans-serif;
       font-weight: 400;
       font-style: normal;
       font-size: 1rem;
@@ -746,6 +822,38 @@
       color: #a0aec0;
     }
 
+    .footer-heart {
+      display: inline-block;
+      animation: heartbeat 1.2s ease-in-out infinite;
+      transform-origin: center;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+
+      14% {
+        transform: scale(1.3);
+      }
+
+      28% {
+        transform: scale(1);
+      }
+
+      42% {
+        transform: scale(1.2);
+      }
+
+      56% {
+        transform: scale(1);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
 
     [data-theme="light"] .footer-text {
       color: #2c2e30;
@@ -783,7 +891,6 @@
 
     [data-theme="light"] .footer-bottom {
       color: #a0aec0;
-      color: #a0aec0;
       font-size: 0.875rem;
     }
 
@@ -813,6 +920,76 @@
       animation: pulse 1.5s infinite;
     }
 
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 46px;
+      height: 46px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border: none;
+      border-radius: 50%;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 99;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(102, 126, 234, 0.55);
+    }
+
+    /* Tech badges strip */
+    .tech-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      margin: 30px auto 10px;
+      width: 100%;
+    }
+
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 600;
+      border: 1px solid rgb(255, 255, 255, 0.1);
+      background-color: #474e559c;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    [data-theme="light"] .tech-badge {
+      background-color: #a0aec0;
+      color: #ffffff;
+    }
+
+    .tech-badge:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Scroll to top button */
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -844,8 +1021,13 @@
 
       .about-section {
         flex-direction: column;
+        align-items: center;
         text-align: center;
         padding: 30px 20px;
+      }
+
+      .about-image-column {
+        align-items: center;
       }
 
       .slider {
@@ -881,6 +1063,9 @@
 
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Scroll to top -->
+  <button class="scroll-top" id="scrollTop" aria-label="Nach oben scrollen">&#8679;</button>
 
 
   <header class="header">
@@ -919,6 +1104,12 @@
     <!-- HERO SECTION -->
     <section class="hero-section section" id="home">
       <div class="hero-content">
+        <div class="hero-avatar-wrap">
+          <div class="hero-avatar-ring"></div>
+          <div class="hero-avatar-ring-2"></div>
+          <img src="./images/LKatze22.webp" alt="LKatze22">
+        </div>
+
         <div class="hero-badge">
           <span class="badge-dot"></span>
           Verfügbar für Projekte
@@ -970,8 +1161,15 @@
     <main class="main-content">
       <!-- About Section -->
       <section id="about" class="about-section section">
-        <div class="about-image">
-          <img src="./images/LKatze22.webp" alt="Portfolio Icon">
+        <div class="about-image-column">
+          <div class="about-image">
+            <img src="./images/LKatze22.webp" alt="Portfolio Icon">
+          </div>
+          <a href="https://github.com/LKatze22" class="social-link" target="_blank">
+            <img src="./images/github.svg" alt="github logo" width="20" height="20"
+              style="vertical-align: middle; margin-right: 8px;">
+            Github
+          </a>
         </div>
         <div class="about-content">
           <h2>
@@ -992,20 +1190,20 @@
             dem Lernen neuer Technologien oder dem Erkunden aktueller Tech-Trends.
             Ich freue mich darauf, meine Kenntnisse kontinuierlich zu erweitern!
           </p>
+          <div class="tech-strip">
+            <span class="tech-badge">HTML</span>
+            <span class="tech-badge">CSS</span>
+            <span class="tech-badge">JavaScript</span>
+            <span class="tech-badge">Tailwind CSS</span>
+            <span class="tech-badge">Learning React</span>
+
+          </div>
         </div>
       </section>
 
       <!-- Work Section -->
       <section id="work" class="work-section section">
-        <section class="links-section">
-          <div class="social-links">
-            <a href="https://github.com/LKatze22" class="social-link" target="_blank">
-              <img src="./images/github.svg" alt="github logo" width="20" height="20"
-                style="vertical-align: middle; margin-right: 8px;">
-              Github
-            </a>
-          </div>
-        </section>
+
 
         <div class="slider-container">
           <div class="slider-header">
@@ -1084,7 +1282,7 @@
           <img src="./images/LKatze22.webp" alt="LKatze22">
           <span>LKatze<span class="accent">22</span></span>
         </div>
-        <p class="footer-text">Entwickelt mit ❤️ von LKatze22</p>
+        <p class="footer-text">Entwickelt mit <span class="footer-heart">❤️</span> von LKatze22</p>
         <div class="footer-links">
           <a href="#home">Home</a>
           <a href="#about">Über mich</a>
@@ -1092,7 +1290,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 LKatze22. Alle Rechte vorbehalten.</p>
+        <p id="copyright-year">&copy;
+          <script>document.write(new Date().getFullYear())</script> LKatze22. Alle Rechte vorbehalten.
+        </p>
       </div>
     </div>
   </footer>
@@ -1171,13 +1371,38 @@
       });
     });
 
-    // Scroll progress bar
+    // Scroll progress bar + scroll-to-top + scroll spy
+    const scrollTopBtn = document.getElementById('scrollTop');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
     window.addEventListener('scroll', function () {
       const scrollProgress = document.getElementById('scrollProgress');
       const scrollTop = window.pageYOffset;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercent = (scrollTop / docHeight) * 100;
       scrollProgress.style.width = scrollPercent + '%';
+
+      // Scroll to top visibility
+      scrollTopBtn.classList.toggle('visible', scrollTop > 400);
+
+      // Scroll spy
+      let current = '';
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 120) {
+          current = section.getAttribute('id');
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
     // Intersection Observer for animations
