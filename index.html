@@ -1052,6 +1052,83 @@
         padding: 0 15px;
       }
     }
+
+    #LKatze22-svg {
+      animation: fill 1s ease forwards;
+      animation-delay: 3750ms;
+    }
+
+    #LKatze22-svg path:nth-child(1) {
+      stroke-dasharray: 499.4;
+      stroke-dashoffset: 499.4;
+      animation: draw 2s ease forwards;
+      animation-delay: 2000ms;
+    }
+
+    #LKatze22-svg path:nth-child(2) {
+      stroke-dasharray: 499.4;
+      stroke-dashoffset: 499.4;
+      animation: draw 2s ease forwards;
+      animation-delay: 1750ms;
+    }
+
+    #LKatze22-svg path:nth-child(3) {
+      stroke-dasharray: 514.7;
+      stroke-dashoffset: 514.7;
+      animation: draw 2s ease forwards;
+      animation-delay: 1500ms;
+    }
+
+    #LKatze22-svg path:nth-child(4) {
+      stroke-dasharray: 376.1;
+      stroke-dashoffset: 376.1;
+      animation: draw 2s ease forwards;
+      animation-delay: 1250ms;
+    }
+
+    #LKatze22-svg path:nth-child(5) {
+      stroke-dasharray: 330.947;
+      stroke-dashoffset: 330.947666;
+      animation: draw 2s ease forwards;
+      animation-delay: 1000ms;
+    }
+
+    #LKatze22-svg path:nth-child(6) {
+      stroke-dasharray: 495.019;
+      stroke-dashoffset: 495.019;
+      animation: draw 2s ease forwards;
+      animation-delay: 750ms;
+    }
+
+    #LKatze22-svg path:nth-child(7) {
+      stroke-dasharray: 525.4;
+      stroke-dashoffset: 525.4;
+      animation: draw 2s ease forwards;
+      animation-delay: 500ms;
+    }
+
+    #LKatze22-svg path:nth-child(8) {
+      stroke-dasharray: 313.2;
+      stroke-dashoffset: 313.2;
+      animation: draw 2s ease forwards;
+      animation-delay: 250ms;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes fill {
+      from {
+        fill: transparent;
+      }
+
+      to {
+        fill: #ffffff;
+      }
+    }
   </style>
 </head>
 
@@ -1116,13 +1193,36 @@
         </div>
 
         <h1 class="hero-title">
-          Hi, ich bin <span class="gradient-text">LKatze22</span>
+          Hi, ich bin <span class="gradient-text">
+            <svg id="LKatze22-svg" width="610" height="116" viewBox="0 0 610 116" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <g opacity="0.6">
+                <path
+                  d="M570.022 2C580.29 2.00007 588.653 4.85171 594.87 10.7578H594.869C601.202 16.6811 604.277 24.787 604.277 34.8164C604.277 43.2094 601.744 51.3516 596.768 59.2139L596.767 59.2129C591.98 66.8311 586.502 73.5842 580.328 79.4639L580.317 79.4756C575.19 84.2765 568.88 89.7476 561.395 95.8877H607.301V110.832H534.037V98.5127L534.785 97.9131C546.964 88.1315 556.482 80.1422 563.353 73.9395C570.163 67.6949 575.865 61.2335 580.471 54.5596L580.475 54.5557C585.105 47.888 587.318 41.5098 587.318 35.3916C587.317 29.4725 585.863 25.0962 583.196 22.0127L583.178 21.9902L583.159 21.9688C580.705 18.9601 576.552 17.2324 570.165 17.2324C564.095 17.2324 559.598 19.1282 556.401 22.7451L556.401 22.7461C553.226 26.3508 551.414 31.2962 551.14 37.7803L551.059 39.6963H534.397L534.471 37.625C534.868 26.4973 538.265 17.6421 544.881 11.3359C551.45 5.07449 559.891 2 570.022 2Z"
+                  stroke="white" stroke-width="4" />
+                <path
+                  d="M487.193 2C497.462 2.00007 505.825 4.85171 512.042 10.7578H512.041C518.374 16.6811 521.449 24.787 521.449 34.8164C521.449 43.2094 518.916 51.3516 513.94 59.2139L513.939 59.2129C509.152 66.8311 503.674 73.5842 497.5 79.4639L497.488 79.4756C492.362 84.2765 486.052 89.7476 478.567 95.8877H524.473V110.832H451.209V98.5127L451.957 97.9131C464.136 88.1315 473.654 80.1422 480.525 73.9395C487.335 67.6949 493.037 61.2335 497.643 54.5596L497.647 54.5557C502.277 47.888 504.489 41.5098 504.489 35.3916C504.489 29.4725 503.035 25.0962 500.368 22.0127L500.35 21.9902L500.331 21.9688C497.877 18.9601 493.724 17.2324 487.337 17.2324C481.267 17.2324 476.77 19.1282 473.572 22.7451L473.573 22.7461C470.398 26.3508 468.586 31.2962 468.312 37.7803L468.231 39.6963H451.568L451.643 37.625C452.04 26.4973 455.437 17.6421 462.053 11.3359C468.622 5.07449 477.063 2 487.193 2Z"
+                  stroke="white" stroke-width="4" />
+                <path
+                  d="M401.785 27.776C409.572 27.7761 416.544 29.4766 422.642 32.9323C428.727 36.3805 433.416 41.1675 436.669 47.2672C440.009 53.2524 441.657 60.0149 441.657 67.5035C441.657 70.0759 441.508 72.7853 441.213 75.6295L441.028 77.4244H378.342C379.109 83.7412 381.5 88.6205 385.411 92.2252C389.916 96.1941 395.336 98.192 401.785 98.192C407.136 98.192 411.413 96.9706 414.748 94.6656C418.244 92.218 420.673 89.0088 422.071 84.9908L422.539 83.6481H440.706L439.999 86.1842C437.768 94.1943 433.289 100.756 426.608 105.818L426.592 105.83C419.849 110.836 411.537 113.28 401.785 113.28C393.986 113.28 386.921 111.527 380.641 107.982L380.628 107.975V107.974C374.441 104.424 369.575 99.3984 366.045 92.944L366.04 92.9323C362.5 86.3595 360.76 78.8247 360.76 70.3844C360.76 61.9539 362.448 54.469 365.89 47.9899C369.22 41.7214 373.856 36.8416 379.785 33.3981L380.363 33.069C386.648 29.5231 393.808 27.776 401.785 27.776ZM401.208 42.8639C395.059 42.8639 389.882 44.805 385.567 48.6735C381.836 52.0935 379.465 56.7419 378.551 62.7682H424.052C423.796 58.958 422.798 55.7227 421.11 53.0074L421.103 52.9977L421.097 52.9879C419.091 49.6738 416.364 47.2059 412.878 45.5504L412.851 45.5377L412.824 45.524C409.388 43.7623 405.53 42.8639 401.208 42.8639Z"
+                  stroke="white" stroke-width="4" />
+                <path
+                  d="M352.365 29.072V42.3357L352.027 42.8406L315.663 97.1843H352.653V111.984H294.941V98.5789L295.277 98.075L331.507 43.7283H295.229V29.072H352.365Z"
+                  stroke="white" stroke-width="4" />
+                <path
+                  d="M267.656 9.20001V29.0721H288.248V43.8719H267.656V88.3836C267.656 92.0043 268.436 94.078 269.5 95.157C270.568 96.1431 272.739 96.8963 276.6 96.8963H288.248V111.984H274.44C266.875 111.984 260.827 110.245 256.669 106.415C252.43 102.511 250.552 96.3195 250.552 88.3836V43.8719H240.328V29.0721H250.552V9.20001H267.656Z"
+                  stroke="white" stroke-width="4" />
+                <path
+                  d="M184.904 27.776C192.109 27.7761 198.47 29.3293 203.914 32.5133C207.191 34.4302 209.986 36.6697 212.28 39.235V29.0719H229.528V111.984H212.28V101.518C209.909 104.191 207.022 106.53 203.635 108.537L203.625 108.543C198.186 111.724 191.874 113.28 184.759 113.28C177.405 113.28 170.705 111.462 164.709 107.803C158.717 104.147 154.009 99.02 150.587 92.4791C147.155 85.9173 145.463 78.4878 145.463 70.2399C145.463 61.9019 147.152 54.5083 150.599 48.1217C154.025 41.6784 158.737 36.6521 164.731 33.0963L164.737 33.0924L164.744 33.0885C170.825 29.5408 177.56 27.776 184.904 27.776ZM187.496 43.152C182.928 43.152 178.808 44.2225 175.095 46.3444C171.412 48.4488 168.45 51.5259 166.212 55.6432C163.999 59.7164 162.855 64.5602 162.855 70.2399C162.855 76.0128 163.998 80.9539 166.212 85.1246C168.452 89.2456 171.422 92.3789 175.12 94.5817C178.827 96.6943 182.938 97.7604 187.496 97.7604C192.058 97.7603 196.172 96.6918 199.882 94.5748C203.676 92.3689 206.688 89.2362 208.922 85.1246C211.139 80.9497 212.28 76.0555 212.28 70.3844C212.28 64.7045 211.136 59.86 208.922 55.7867C206.691 51.6814 203.689 48.6064 199.913 46.4987L199.888 46.485L199.865 46.4703C196.156 44.2627 192.048 43.152 187.496 43.152Z"
+                  stroke="white" stroke-width="4" />
+                <path
+                  d="M81.2607 7.616V50.8787L119.239 8.28494L119.836 7.616H141.801L138.774 10.9588L94.4932 59.8631L139.198 108.633L142.271 111.984H119.699L119.104 111.324L81.2607 69.3933V111.984H64.1562V7.616H81.2607Z"
+                  stroke="white" stroke-width="4" />
+                <path d="M19.1035 7.616V97.3279H54.2402V111.984H2V7.616H19.1035Z" stroke="white" stroke-width="4" />
+              </g>
+            </svg>
+          </span>
         </h1>
-
-        <div class="hero-subtitle">
-          <span class="typing-text" id="heroTypingText"></span>
-          <span class="cursor-blink">|</span>
-        </div>
 
         <p class="hero-description">
           Leidenschaftlicher Web-Developer mit Fokus auf kreative und funktionale Webanwendungen.
@@ -1303,7 +1403,7 @@
       const loader = document.getElementById('loader');
       setTimeout(() => {
         loader.classList.add('hidden');
-      }, 1000);
+      }, 250);
     });
 
     // Theme Toggle
@@ -1318,40 +1418,7 @@
       localStorage.setItem('theme', newTheme);
     });
 
-    // Hero Typewriter Effect
-    const heroTypingTexts = ['Web Developer', 'Creative Coder', 'Problem Solver', 'Tech Enthusiast'];
-    let heroTextIdx = 0;
-    let heroCharIdx = 0;
-    let heroIsDeleting = false;
-    let heroSpeed = 100;
-    const heroTypingElement = document.getElementById('heroTypingText');
 
-    function typeHero() {
-      const currentText = heroTypingTexts[heroTextIdx];
-
-      if (heroIsDeleting) {
-        heroTypingElement.textContent = currentText.substring(0, heroCharIdx - 1);
-        heroCharIdx--;
-        heroSpeed = 50;
-      } else {
-        heroTypingElement.textContent = currentText.substring(0, heroCharIdx + 1);
-        heroCharIdx++;
-        heroSpeed = 100;
-      }
-
-      if (!heroIsDeleting && heroCharIdx === currentText.length) {
-        heroIsDeleting = true;
-        heroSpeed = 2000;
-      } else if (heroIsDeleting && heroCharIdx === 0) {
-        heroIsDeleting = false;
-        heroTextIdx = (heroTextIdx + 1) % heroTypingTexts.length;
-        heroSpeed = 500;
-      }
-
-      setTimeout(typeHero, heroSpeed);
-    }
-
-    typeHero();
 
     // Smooth scrolling navigation
     document.querySelectorAll('.nav-link').forEach(link => {
